@@ -8,11 +8,11 @@ Common CSSs applicable to [MetaStanza](https://togostanza.github.io/metastanza/)
 * Contirb themes
   * Repository for the community developed themes
 
-## Guide lines to use themes in your TogoStanza
+## Guidelines to use themes in your TogoStanza
 
 To be written...
 
-## Guide lines to create your own themes
+## Guidelines to create your own themes
 
 To be written...
 
