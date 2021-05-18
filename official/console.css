@@ -1,0 +1,92 @@
+togostanza-tree, togostanza-barchart, togostanza-piechart, togostanza-linechart, togostanza-scatterplot, togostanza-scorecard, togostanza-text, togostanza-pagination-table, togostanza-hash-table, togostanza-scroll-table {
+  --togostanza-series-0-color: #00fe17;
+  --togostanza-series-1-color: #544dff;
+  --togostanza-series-2-color: #f6fe00;
+  --togostanza-series-3-color: #ff37ff;
+  --togostanza-series-4-color: #ff4247;
+  --togostanza-series-5-color: #00fffa;
+  --togostanza-background-color: #000000;
+  --togostanza-font-family: 'Courier', sans-serif;
+  --togostanza-axis-color: #FFFFFF;
+  --togostanza-axis-width: 1;
+  --togostanza-grid-color: #FFFFFF;
+  --togostanza-grid-dash-length: 0;
+  --togostanza-grid-opacity: 1;
+  --togostanza-grid-width: 0.1;
+  --togostanza-tick-color: #FFFFFF;
+  --togostanza-tick-length: 1.5;
+  --togostanza-tick-width: 0.5;
+  --togostanza-label-font-color: #FFFFFF;
+  --togostanza-label-font-size: 10;
+  --togostanza-border-color: #FFFFFF;
+  --togostanza-border-width: 0.1;
+  --togostanza-title-font-color: #FFFFFF;
+  --togostanza-title-font-size: 12;
+  --togostanza-title-font-weight: 400;
+  --togostanza-line-width: 1;
+  --togostanza-opacity: 0.8;
+  --togostanza-node-size: 100;
+  --togostanza-edge-color: #EEEEEE;
+  --togostanza-text-font-color: #FFFFFF;
+  --togostanza-text-font-size: 12px;
+  --togostanza-text-font-weight: 400;
+  --togostanza-table-border: 1px solid #FFFFFF;
+  --togostanza-table-shadow: 1px 1px 3px 1px #EEEEEE;
+  --togostanza-thead-border-bottom: 1px solid #FFFFFF;
+  --togostanza-thead-font-color: #00fe17;
+  --togostanza-thead-background-color: rgba(0, 0, 0, 0);
+  --togostanza-thead-font-size: 12px;
+  --togostanza-thead-font-weight: 400;
+  --togostanza-tbody-border-bottom: 1px solid #FFFFFF;
+  --togostanza-tbody-font-color: #FFFFFF;
+  --togostanza-tbody-font-size: 10px;
+  --togostanza-tbody-font-weight: 400;
+  --togostanza-tbody-odd-background-color: rgba(0, 0, 0, 0);
+  --togostanza-tbody-even-background-color: rgba(0, 0, 0, 0);
+  --togostanza-control-border: 1px solid #00fe17;
+  --togostanza-control-active-color: #ff37ff;
+  --togostanza-non-active-color: #EEEEEE;
+  --togostanza-control-font-color: #544dff;
+  --togostanza-control-font-size: 10px;
+  --togostanza-control-border-radius: 3px;
+  --togostanza-pagination-font-color: #00fe17;
+  --togostanza-pagination-font-size: 10px;
+  --togostanza-pagination-background-color: rgba(0, 0, 0, 0);
+  --togostanza-pagination-border: 1px solid rgba(0, 0, 0, 0.1);
+  --togostanza-pagination-border-radius: 3px;
+  --togostanza-pagination-padding: 2px 8px;
+  --togostanza-pagination-current-font-color: #FFFFFF;
+  --togostanza-pagination-current-background-color: #00fe17;
+  --togostanza-pagination-current-border: 1px solid #00fe17;
+  --togostanza-pagination-arrow-color: #00fe17;
+  --togostanza-vertical-pagination-placement: column-reverse;
+  --togostanza-horizonal-pagination-placement: center {
+
+ } ;
+}
+
+togostanza-scorecard {
+  --togostanza-key-font-color: #00fe17;
+  --togostanza-key-font-size: 16;
+  --togostanza-key-font-weight: 400;
+  --togostanza-value-font-color: #FFFFFF;
+  --togostanza-value-font-size: 36;
+  --togostanza-key-font-weight: 600 {
+
+
+ } ;
+}
+
+togostanza-hash-table {
+  --column-count: 1;
+  --table-background-color: rgba(255,255,255,0);
+  --row-padding: 5px;
+  --key-width-percentage: 30%;
+  --togostanza-key-font-color: #00fe17;
+  --togostanza-key-font-size: 12px;
+  --togostanza-key-font-weight: 400;
+  --togostanza-value-font-color: #FFFFFF;
+  --togostanza-value-font-size: 12px;
+  --togostanza-value-font-weight: 400;
+}
+/*# sourceMappingURL=Console.css.map */

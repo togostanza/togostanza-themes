@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+togostanza-tree, togostanza-barchart, togostanza-piechart, togostanza-linechart, togostanza-scatterplot, togostanza-scorecard, togostanza-text, togostanza-pagination-table, togostanza-hash-table, togostanza-scroll-table {
+  --togostanza-series-0-color: #adc1c7;
+  --togostanza-series-1-color: #ceeded;
+  --togostanza-series-2-color: #ccb9b1;
+  --togostanza-series-3-color: #f5e7d0;
+  --togostanza-series-4-color: #AED6C8;
+  --togostanza-series-5-color: #C4D6F5;
+  --togostanza-background-color: #FFFFFF;
+  --togostanza-font-family: "Lato", san serif;
+  --togostanza-axis-color: #6b645b;
+  --togostanza-axis-width: 1;
+  --togostanza-grid-color: #ccb9b1;
+  --togostanza-grid-dash-length: 0;
+  --togostanza-grid-opacity: 1;
+  --togostanza-grid-width: 0;
+  --togostanza-tick-color: #ccb9b1;
+  --togostanza-tick-length: 0.5;
+  --togostanza-tick-width: 0.5;
+  --togostanza-label-font-color: #6b645b;
+  --togostanza-label-font-size: 10;
+  --togostanza-border-color: #6b645b;
+  --togostanza-border-width: 0.5;
+  --togostanza-title-font-color: #6b645b;
+  --togostanza-title-font-size: 12;
+  --togostanza-title-font-weight: 400;
+  --togostanza-line-width: 1;
+  --togostanza-opacity: 0.7;
+  --togostanza-node-size: 100;
+  --togostanza-edge-color: #EEEEEE;
+  --togostanza-text-font-color: #6b645b;
+  --togostanza-text-font-size: 12px;
+  --togostanza-text-font-weight: 400;
+  --togostanza-table-border: 1px solid #adc1c7;
+  --togostanza-table-shadow: 1px 1px 3px 1px #EEEEEE;
+  --togostanza-thead-border-bottom: 1px solid #ccb9b1;
+  --togostanza-thead-font-color: #adc1c7;
+  --togostanza-thead-background-color: #efeeed;
+  --togostanza-thead-font-size: 12px;
+  --togostanza-thead-font-weight: 400;
+  --togostanza-tbody-border-bottom: 1px solid #ccb9b1;
+  --togostanza-tbody-font-color: #6b645b;
+  --togostanza-tbody-font-size: 10px;
+  --togostanza-tbody-font-weight: 400;
+  --togostanza-tbody-odd-background-color: #FFFFFF;
+  --togostanza-tbody-even-background-color: #FFFFFF;
+  --togostanza-control-border: 1px solid #adc1c7;
+  --togostanza-control-active-color: #FA8C84;
+  --togostanza-non-active-color: #EEEEEE;
+  --togostanza-control-font-color: #ccb9b1;
+  --togostanza-control-font-size: 10px;
+  --togostanza-control-border-radius: 3px;
+  --togostanza-pagination-font-color: #ccb9b1;
+  --togostanza-pagination-font-size: 10px;
+  --togostanza-pagination-background-color: #FFFFFF;
+  --togostanza-pagination-border: 1px solid rgba(0, 0, 0, 0.1);
+  --togostanza-pagination-border-radius: 3px;
+  --togostanza-pagination-padding: 2px 8px;
+  --togostanza-pagination-current-font-color: #FFFFFF;
+  --togostanza-pagination-current-background-color: #adc1c7;
+  --togostanza-pagination-current-border: 1px solid #adc1c7;
+  --togostanza-pagination-arrow-color: #adc1c7;
+  --togostanza-vertical-pagination-placement: column-reverse;
+  --togostanza-horizonal-pagination-placement: center;
+}
+
+togostanza-scorecard {
+  --togostanza-key-font-color: #adc1c7;
+  --togostanza-key-font-size: 16;
+  --togostanza-key-font-weight: 400;
+  --togostanza-value-font-color: #6b645b;
+  --togostanza-value-font-size: 36;
+  --togostanza-key-font-weight: 600;
+}
+
+togostanza-hash-table {
+  --column-count: 1;
+  --table-background-color: rgba(255,255,255,0);
+  --row-padding: 5px;
+  --key-width-percentage: 30%;
+  --togostanza-key-font-color: #adc1c7;
+  --togostanza-key-font-size: 12px;
+  --togostanza-key-font-weight: 400;
+  --togostanza-value-font-color: #707070;
+  --togostanza-value-font-size: 12px;
+  --togostanza-value-font-weight: 400;
+}
+/*# sourceMappingURL=pale.css.map */
