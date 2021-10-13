@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 togostanza-tree, togostanza-barchart, togostanza-piechart, togostanza-linechart, togostanza-scatterplot, togostanza-scorecard, togostanza-text, togostanza-pagination-table, togostanza-hash-table, togostanza-scroll-table {
@@ -86,4 +87,220 @@ togostanza-hash-table {
   --togostanza-value-font-size: 12px;
   --togostanza-value-font-weight: 400;
 }
+
+.clinical-significance:before {
+  content: attr(data-sign) "";
+  width: 18px;
+  line-height: 18px;
+  height: 18px;
+  display: inline-block;
+  margin-right: 3px;
+  border-radius: 9px;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  vertical-align: top;
+}
+.clinical-significance[data-sign=P]:before {
+  color: #FF5A54;
+  border-color: #FF5A54;
+  background-color: #ffeeed;
+}
+.clinical-significance[data-sign=LP]:before {
+  color: #FFAE00;
+  border-color: #FFAE00;
+  background-color: #fff7e6;
+}
+.clinical-significance[data-sign=US]:before {
+  color: #94928D;
+  border-color: #94928D;
+  background-color: #eaeae9;
+}
+.clinical-significance[data-sign=LB]:before {
+  color: #9DCF3A;
+  border-color: #9DCF3A;
+  background-color: #f3f9e6;
+}
+.clinical-significance[data-sign=B]:before {
+  color: #24D636;
+  border-color: #24D636;
+  background-color: #e5fbe7;
+}
+.clinical-significance[data-sign=CI]:before {
+  color: #C654FF;
+  border-color: #C654FF;
+  background-color: #f9edff;
+}
+.clinical-significance[data-sign=DR]:before, .clinical-significance[data-sign=A]:before, .clinical-significance[data-sign=RF]:before, .clinical-significance[data-sign=PR]:before, .clinical-significance[data-sign=AF]:before, .clinical-significance[data-sign=O]:before {
+  color: #9C8200;
+  border-color: #9C8200;
+  background-color: #fff7cf;
+}
+.clinical-significance[data-sign=NP]:before, .clinical-significance[data-sign=AN]:before {
+  color: #444;
+  border-color: #94928D;
+  background-color: white;
+}
+.clinical-significance-full {
+  font-size: 12px;
+  font-weight: bold;
+  border: 1px solid;
+  border-radius: 8.5px;
+  padding: 0 7px;
+}
+.clinical-significance-full[data-sign=P] {
+  color: #FF5A54;
+  border-color: #FF5A54;
+  background-color: #ffeeed;
+}
+.clinical-significance-full[data-sign=LP] {
+  color: #FFAE00;
+  border-color: #FFAE00;
+  background-color: #fff7e6;
+}
+.clinical-significance-full[data-sign=US] {
+  color: #94928D;
+  border-color: #94928D;
+  background-color: #eaeae9;
+}
+.clinical-significance-full[data-sign=LB] {
+  color: #9DCF3A;
+  border-color: #9DCF3A;
+  background-color: #f3f9e6;
+}
+.clinical-significance-full[data-sign=B] {
+  color: #24D636;
+  border-color: #24D636;
+  background-color: #e5fbe7;
+}
+.clinical-significance-full[data-sign=CI] {
+  color: #C654FF;
+  border-color: #C654FF;
+  background-color: #f9edff;
+}
+.clinical-significance-full[data-sign=DR], .clinical-significance-full[data-sign=A], .clinical-significance-full[data-sign=RF], .clinical-significance-full[data-sign=PR], .clinical-significance-full[data-sign=AF], .clinical-significance-full[data-sign=O] {
+  color: #9C8200;
+  border-color: #9C8200;
+  background-color: #fff7cf;
+}
+.clinical-significance-full[data-sign=NP], .clinical-significance-full[data-sign=AN] {
+  color: #444;
+  border-color: #94928D;
+  background-color: white;
+}
+
+.star-rating {
+  display: inline-block;
+  position: absolute;
+  font-size: 15px;
+}
+.star-rating:after {
+  content: "★★★★";
+  color: #dfdedd;
+}
+.star-rating > .star-rating-item {
+  position: absolute;
+  overflow: hidden;
+}
+.star-rating > .star-rating-item:before {
+  content: "★★★★";
+  color: #249EB3;
+}
+.star-rating > .star-rating-item[data-stars="1"] {
+  width: 25%;
+}
+.star-rating > .star-rating-item[data-stars="2"] {
+  width: 50%;
+}
+.star-rating > .star-rating-item[data-stars="3"] {
+  width: 75%;
+}
+.star-rating > .star-rating-item[data-stars="4"] {
+  width: 100%;
+}
+.ref-alt {
+  font-weight: bold;
+}
+.ref-alt > .ref, .ref-alt > .alt {
+  display: inline-block;
+  line-height: 18px;
+  height: 18px;
+  padding: 0 6px;
+  vertical-align: middle;
+}
+.ref-alt > .ref[data-sum]:after,
+.ref-alt > .alt[data-sum]:after {
+  color: white;
+  font-size: 10px;
+  display: inline-block;
+  line-height: 12px;
+  padding: 0 4px;
+  border-radius: 6px;
+  vertical-align: middle;
+  font-weight: lighter;
+  margin: 0 -3px 4px 3px;
+  position: relative;
+  content: attr(data-sum) "bp";
+}
+.ref-alt > .ref[data-sum="0"]:after, .ref-alt > .ref[data-sum="1"]:after, .ref-alt > .ref[data-sum="2"]:after, .ref-alt > .ref[data-sum="3"]:after, .ref-alt > .ref[data-sum="4"]:after {
+  display: none;
+}
+.ref-alt > .alt[data-sum="0"]:after, .ref-alt > .alt[data-sum="1"]:after, .ref-alt > .alt[data-sum="2"]:after, .ref-alt > .alt[data-sum="3"]:after, .ref-alt > .alt[data-sum="4"]:after {
+  display: none;
+}
+.ref-alt > .ref {
+  border-left: solid 1px #249EB3;
+  border-top: solid 1px #249EB3;
+  border-bottom: solid 1px #249EB3;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  color: #249EB3;
+  background-color: #d8f0f4;
+  position: relative;
+  padding-right: 4px;
+}
+.ref-alt > .ref[data-sum]:after {
+  background-color: #249EB3;
+}
+.ref-alt > .alt {
+  border-right: solid 1px #FF6682;
+  border-top: solid 1px #FF6682;
+  border-bottom: solid 1px #FF6682;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  color: #FF6682;
+  background-color: #fde2e7;
+  padding-left: 9px;
+}
+.ref-alt > .alt[data-sum]:after {
+  background-color: #FF6682;
+}
+.ref-alt > .arrow {
+  position: relative;
+}
+.ref-alt > .arrow:before, .ref-alt > .arrow:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+}
+.ref-alt > .arrow:before {
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 6px solid #249EB3;
+  top: 0;
+  right: -6px;
+}
+.ref-alt > .arrow:after {
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 6px solid #d8f0f4;
+  top: 1px;
+  right: -5px;
+}
+main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
+  display: flex;
+}
+
 /*# sourceMappingURL=togovar.css.map */
