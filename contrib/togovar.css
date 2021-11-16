@@ -303,4 +303,8 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
   display: flex;
 }
 
+* {
+  background-color: red;
+}
+
 /*# sourceMappingURL=togovar.css.map */
