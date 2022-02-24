@@ -302,5 +302,28 @@ togostanza-hash-table {
 main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
   display: flex;
 }
+:host(togostanza-pagination-table) .wrapper > .tableOptionWrapper {
+  min-height: auto;
+}
+:host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper {
+  min-height: auto;
+}
+:host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableOption {
+	padding: 4px 6px 0;
+  margin-bottom: 0;
+}
+:host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table {
+	line-height: 1;
+}
+:host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table > thead > tr > th,
+:host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table > tbody > tr > td {
+	padding: 4px;
+}
+:host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table > tbody > tr:last-of-type > td {
+  border-bottom: solid 1px var(--togostanza-border-color);
+}
+:host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table > tbody > tr > td > span .label {
+  overflow: inherit;
+}
 
 /*# sourceMappingURL=togovar.css.map */
