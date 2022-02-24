@@ -322,8 +322,5 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 :host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table > tbody > tr:last-of-type > td {
   border-bottom: solid 1px var(--togostanza-border-color);
 }
-:host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table > tbody > tr > td > span .label {
-  overflow: inherit;
-}
 
 /*# sourceMappingURL=togovar.css.map */
