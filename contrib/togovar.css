@@ -372,3 +372,17 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
   width: 100%;
   border-bottom: solid 1px #444;
 }
+:host(togostanza-hash-table) .container dl {
+  padding: 0;
+  line-height: 1.2;
+}
+:host(togostanza-hash-table) .container dt {
+  width: 6em;
+}
+:host(togostanza-hash-table) .container dd {
+  width: calc(100% - 6em)
+}
+:host(togostanza-hash-table) .container dt,
+:host(togostanza-hash-table) .container dd {
+  padding: 7px 4px;
+}
