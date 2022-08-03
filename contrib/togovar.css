@@ -48,7 +48,7 @@ togostanza-tree, togostanza-barchart, togostanza-piechart, togostanza-linechart,
   --togostanza-tbody-even-background-color: #FFFFFF;
   --togostanza-control-border: 1px solid #aaa;;
   --togostanza-control-active-color: #249eb3;
-  --togostanza-non-active-color: #EEEEEE;
+  --togostanza-non-active-color: #CCC;
   --togostanza-control-font-color: #444444;
   --togostanza-control-font-size: 14px;
   --togostanza-control-border-radius: 3px;
@@ -220,8 +220,18 @@ togostanza-hash-table {
 .star-rating > .star-rating-item[data-stars="4"] {
   width: 100%;
 }
+.chromosome-position {
+  white-space: nowrap;
+}
+.chromosome-position > * {
+  display: inline-block;
+}
+.chromosome-position > *:nth-child(1)::after {
+  content: ":";
+}
 .ref-alt {
   font-weight: bold;
+  white-space: nowrap;
 }
 .ref-alt > .ref, .ref-alt > .alt {
   display: inline-block;
@@ -299,6 +309,16 @@ togostanza-hash-table {
   top: 1px;
   right: -5px;
 }
+.consequence-item {
+  white-space: nowrap;
+}
+.clinical_significance {
+  white-space: nowrap;
+}
+.clinical_significance > .clinical-significance {
+  display: inline-block;
+  vertical-align: middle;
+}
 main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
   display: flex;
 }
@@ -318,6 +338,8 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 :host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table > thead > tr > th,
 :host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table > tbody > tr > td {
 	padding: 4px;
+	overflow: auto;
+  position: relative;
 }
 :host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table > tbody > tr:last-of-type > td {
   border-bottom: solid 1px var(--togostanza-border-color);
@@ -325,5 +347,28 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 :host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table > tbody > tr > td > span .label {
   overflow: inherit;
 }
-
-/*# sourceMappingURL=togovar.css.map */
+:host(togostanza-scroll-table) .tableWrapper > table {
+	line-height: 1;
+}
+:host(togostanza-scroll-table) .tableWrapper > table > thead > tr > th,
+:host(togostanza-scroll-table) .tableWrapper > table > tbody > tr > td {
+	padding: 4px;
+	overflow: auto;
+  position: relative;
+}
+:host(togostanza-scroll-table) .tableWrapper > table > thead > tr > th {
+  padding-top: 7px;
+  white-space: nowrap;
+  position: sticky;
+  background-color: var(--togostanza-thead-background-color);
+  z-index: 1;
+}
+:host(togostanza-scroll-table) .tableWrapper > table > thead {
+  border-bottom: none;
+}
+:host(togostanza-scroll-table) .tableWrapper > table > thead > tr > th::after {
+  content: "";
+  display: block;
+  width: 100%;
+  border-bottom: solid 1px #444;
+}
