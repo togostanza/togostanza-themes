@@ -43,10 +43,10 @@ togostanza-tree, togostanza-barchart, togostanza-piechart, togostanza-linechart,
   --togostanza-tbody-border-bottom: 1px solid #dee2e6;
   --togostanza-tbody-font-color: #444444;
   --togostanza-tbody-font-size: 14px;
-  --togostanza-thead-font-weight: 400;
+  --togostanza-tbody-font-weight: 400;
   --togostanza-tbody-odd-background-color: #FFFFFF;
   --togostanza-tbody-even-background-color: #FFFFFF;
-  --togostanza-control-border: 1px solid #aaa;;
+  --togostanza-control-border: 1px solid #aaa;
   --togostanza-control-active-color: #249eb3;
   --togostanza-non-active-color: #CCC;
   --togostanza-control-font-color: #444444;
@@ -76,7 +76,7 @@ togostanza-scorecard {
   --togostanza-key-font-weight: 400;
   --togostanza-value-font-color: #444444;
   --togostanza-value-font-size: 36;
-  --togostanza-key-font-weight: 600;
+  --togostanza-value-font-weight: 600;
 }
 
 togostanza-hash-table {
@@ -335,7 +335,9 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 :host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table {
 	line-height: 1;
 }
-:host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table > thead > tr > th,
+:host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table > thead > tr > th {
+  padding: 4px;
+}
 :host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table > tbody > tr > td {
 	padding: 4px;
 	overflow: hidden;
