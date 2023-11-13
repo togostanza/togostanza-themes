@@ -65,6 +65,17 @@
   > tbody
   > tr
   > td
+  > span {
+  line-height: 1.4;
+}
+:host(togostanza-pagination-table)
+  .wrapper
+  > .tableOptionWrapper
+  > .tableWrapper
+  > table
+  > tbody
+  > tr
+  > td
   > span
   .label {
   overflow: inherit;
