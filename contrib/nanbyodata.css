@@ -83,3 +83,10 @@
   .label {
   overflow: inherit;
 }
+
+:host(togostanza-pagination-table)
+table {
+  td {
+    vertical-align: top;
+  }
+}
