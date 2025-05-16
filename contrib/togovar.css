@@ -349,6 +349,12 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 :host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table > tbody > tr > td > span .label {
   overflow: inherit;
 }
+:host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table > tbody > tr > td a,
+:host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table > tbody > tr > td a .label,
+:host(togostanza-scroll-table) .tableWrapper > table > tbody > tr > td > span > a,
+:host(togostanza-hash-table) .container dd > a {
+  color: #256D80;
+}
 :host(togostanza-scroll-table) .tableWrapper > table {
 	line-height: 1;
 }
