@@ -37,8 +37,6 @@
   > tr
   > th {
   padding: 10px;
-  max-width: 100px;
-  white-space: normal;
 }
 :host(togostanza-pagination-table)
   .wrapper
