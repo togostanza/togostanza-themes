@@ -149,6 +149,9 @@ togostanza-hash-table {
   border: 1px solid;
   border-radius: 8.5px;
   padding: 0 7px;
+  white-space: nowrap;
+  display: inline-block;
+  margin-bottom: 2px;
 }
 .clinical-significance-full[data-sign=P] {
   color: #FF5A54;
@@ -322,6 +325,13 @@ togostanza-hash-table {
 main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
   display: flex;
 }
+:host(togostanza-pagination-table)  {
+ --togostanza-fonts-font_family: 'Roboto Condensed', sans-serif;
+ --togostanza-fonts-font_size_small: 14;
+  .line-clamp{
+	 padding: 2px;
+ }
+}
 :host(togostanza-pagination-table) .wrapper > .tableOptionWrapper {
   min-height: auto;
 }
@@ -329,7 +339,7 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
   min-height: auto;
 }
 :host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableOption {
-	padding: 4px 6px 0;
+	padding: 4px 6px;
   margin-bottom: 0;
 }
 :host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table {
