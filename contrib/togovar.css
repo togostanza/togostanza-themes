@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 togostanza-tree, togostanza-barchart, togostanza-piechart, togostanza-linechart, togostanza-scatterplot, togostanza-scorecard, togostanza-text, togostanza-pagination-table, togostanza-hash-table, togostanza-scroll-table {
   --togostanza-series-0-color: #94d0da;
+  --togostanza-theme-series_0_color: #249eb3;
   --togostanza-series-1-color: #249eb3;
   --togostanza-series-2-color: #dcf1f9;
   --togostanza-series-3-color: #0f89ac;
