@@ -465,7 +465,7 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 	}
 }
 
-togostanza--menu {
+/* togostanza--menu {
   position: sticky;
   background-color: white;
   opacity: 0.8;
@@ -474,4 +474,4 @@ togostanza--menu {
   display: block;
   margin-left: auto;
   width: fit-content;
-}
+} */
