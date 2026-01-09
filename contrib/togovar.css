@@ -444,19 +444,25 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
  togostanza-hash-table
 ============================== */
 
-:host(togostanza-hash-table) .container dl {
-  padding: 0;
-  line-height: 1.2;
-}
-:host(togostanza-hash-table) .container dt {
-  width: 6em;
-}
-:host(togostanza-hash-table) .container dd {
-  width: calc(100% - 6em)
-}
-:host(togostanza-hash-table) .container dt,
-:host(togostanza-hash-table) .container dd {
-  padding: 7px 4px;
+:host(togostanza-hash-table) .container{
+	dl {
+		padding: 0;
+		line-height: 1.2;
+	}
+
+	dt,dd {
+		padding: 7px 4px;
+	}
+
+	dt {
+		color: #444;
+	    font-weight: bold;
+		width: 6em;
+	}
+
+	dd {
+		width: calc(100% - 6em)
+	}
 }
 
 togostanza--menu {
