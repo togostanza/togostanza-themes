@@ -465,13 +465,14 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 	}
 }
 
-/* togostanza--menu {
-  position: sticky;
+togostanza--menu {
+  /* position: sticky;
   background-color: white;
   opacity: 0.8;
   bottom: 0;
   right: 10px;
   display: block;
   margin-left: auto;
-  width: fit-content;
-} */
+  width: fit-content; */
+  cursor: pointer;
+}
