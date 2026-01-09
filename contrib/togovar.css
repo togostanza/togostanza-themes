@@ -343,6 +343,8 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
  --togostanza-theme-series_0_color: #249eb3;
 
 	.wrapper {
+		max-height: none !important;
+		
 		> .tableOptionWrapper {
 			> .tableOption {
 		      padding: 4px 6px;
