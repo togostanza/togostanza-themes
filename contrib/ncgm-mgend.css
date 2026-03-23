@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+/* -- Variables -- */
+:host(togostanza-manhattan-plot) {
+  --color-purple-dark: #21006e;
+  --color-purple-light: #715ba3;
+  --text-gray: #888;
+  --text-dark: #333;
+}
+
 .clinical-significance {
   display: flex;
   align-items: center;
@@ -59,4 +67,75 @@ background-color: #fff7cf;
 color: #444;
 border-color: #94928D;
 background-color: white;
+}
+
+/* ==============================
+ togostanza-manhattan-plot
+============================== */
+:host(togostanza-manhattan-plot) {
+
+  main {
+    #manhattan-title {
+      display: none;
+    }
+
+    h2 {
+      color: var(--text-dark);
+    }
+    
+    .info-section{
+     #study-name, #project-name {
+       color: var(--text-gray);
+     }
+    }
+
+    .chart-section{
+      .info-key {
+        color: var(--text-gray);
+      }
+
+      #control{
+        #slider_container{
+          .info-key {
+            fill: var(--text-gray);
+          }
+          
+          #slider {
+            fill: rgb(149 128 255 / 10%)
+          }
+      
+          .slider-label{
+            fill: var(--color-purple-dark);
+          } 
+        }
+
+        #ctrl_button{
+          .info-key {
+            color: var(--text-gray);
+
+            #range_text{
+              color: var(--color-purple-dark);;
+            }
+          }
+        }  
+      }
+    }
+
+    .table-section{
+      .table-info .total-overthresh-variants .info-key {
+        color: var(--text-gray);
+      }
+      
+      #listingTableHead{
+       background-color: rgb(149 128 255 / 10%);
+        color: var(--color-purple-dark);
+      }
+
+      .pagination-block{
+        .page-number .page-btn.current{
+          background-color: var(--color-purple-light);
+        }
+      }
+    }
+  }
 }
