@@ -6,6 +6,7 @@
   --color-purple-light: #715ba3;
   --text-gray: #888;
   --text-dark: #333;
+  --bg-surface: #f8f9fa;
 }
 
 .clinical-significance {
@@ -69,6 +70,22 @@ border-color: #94928D;
 background-color: white;
 }
 
+
+/* ==============================
+ togostanza-pagination-table
+============================== */
+:host(togostanza-pagination-table){
+  main {
+    .tableOptionWrapper{
+      min-height: auto;
+    }
+    
+    .tableWrapper{
+      min-height: auto !important;
+    }
+  }
+}
+
 /* ==============================
  togostanza-manhattan-plot
 ============================== */
@@ -127,14 +144,39 @@ background-color: white;
       }
       
       #listingTableHead{
-       background-color: rgb(149 128 255 / 10%);
+        background-color: var(--bg-surface);
         color: var(--color-purple-dark);
       }
 
-      .pagination-block{
-        .page-number .page-btn.current{
-          background-color: var(--color-purple-light);
+      .pagination {
+        table {
+          border: none;
+          border-top: 1px solid var(--text-muted);
+          
+          tbody {
+            background-color: transparent;
+
+            tr {
+              border-bottom: 1px solid var(--border-color);
+  
+              td {
+                border-left: none;
+              }
+            }
+            
+            tr:nth-last-of-type(odd) {
+              background-color: transparent;
+            }
+          }
         }
+        
+
+
+        .pagination-block{
+          .page-number .page-btn.current{
+             background-color: var(--color-purple-light);
+         }
+        } 
       }
     }
   }
