@@ -181,3 +181,76 @@ background-color: white;
     }
   }
 }
+
+/* ==============================
+ Score badges (Transcripts: AlphaMissense / SIFT / PolyPhen)
+============================== */
+.score-badge {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35em;
+  line-height: 1.3;
+}
+.score-badge .score-dot {
+  display: none;
+}
+.score-badge .score-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75em;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  font-size: 0.85em;
+  font-weight: 700;
+  color: #fff;
+}
+.score-badge .score-label {
+  font-size: 0.95em;
+  font-weight: 400;
+  color: var(--text-dark, #333);
+}
+/* AlphaMissense: pathogenic / ambiguous / likely_benign（variant_transcript Output と一致） */
+.score-badge--alpha-missense[data-class='pathogenic'] .score-num,
+.score-badge[data-class='pathogenic'] .score-num {
+  background-color: #ff5a54;
+}
+.score-badge--alpha-missense[data-class='ambiguous'] .score-num,
+.score-badge[data-class='ambiguous'] .score-num {
+  background-color: #f5a623;
+}
+.score-badge--alpha-missense[data-class='likely_benign'] .score-num,
+.score-badge[data-class='likely_benign'] .score-num {
+  background-color: #9dcf3a;
+}
+
+.score-badge--alpha-missense[data-class='benign'] .score-num,
+.score-badge[data-class='benign'] .score-num {
+  background-color: #24d636;
+}
+/* SIFT */
+.score-badge--sift[data-class='deleterious'] .score-num {
+  background-color: #e8927a;
+}
+.score-badge--sift[data-class='tolerated'] .score-num {
+  background-color: #24d636;
+}
+/* PolyPhen */
+.score-badge--polyphen[data-class='benign'] .score-num {
+  background-color: #2fa84f;
+}
+.score-badge--polyphen[data-class='possibly_damaging'] .score-num {
+  background-color: #f5a623;
+}
+.score-badge--polyphen[data-class='probably_damaging'] .score-num {
+  background-color: #e85d04;
+}
+.score-badge[data-class=''] .score-num,
+.score-badge:not([data-class]) .score-num {
+  background-color: #94928d;
+}
+
+.score-na {
+  color: var(--text-muted, #94928d);
+}
