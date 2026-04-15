@@ -58,8 +58,7 @@
   --color-cs-other-bg: #fff7cf;
 
   /* ---- Clinical significance: Not Provided / Not Assessed ---- */
-  --color-cs-np-border: #94928d;
-  --color-cs-np-text: #444;
+  --color-cs-np: #94928d;
   --color-cs-np-bg: white;
 }
 
@@ -203,9 +202,9 @@
 
     &[data-value="NP"]::before,
     &[data-value="AN"]::before {
-      color: var(--color-cs-np-text);
+      color: var(--color-cs-np);
       background-color: var(--color-cs-np-bg);
-      border-color: var(--color-cs-np-border);
+      border-color: var(--color-cs-np);
     }
   }
 }
