@@ -1,7 +1,17 @@
 @charset "UTF-8";
 
 /* -- Variables -- */
-:host(togostanza-manhattan-plot) {
+:host(togostanza-pagination-table) {
+  --color-prediction-damaging: #ff5a54;      /* 有害 */
+  --color-prediction-possibly-damaging: #f5a623;  /* 有害の可能性 */
+  --color-prediction-benign: #2fa84f;        /* 良性 */
+  --color-prediction-tolerated: #04af58;     /* 許容 */
+  --color-prediction-likely-benign: #9dcf3a; /* 良性の可能性 */
+  --color-prediction-ambiguous: #bbba7e;     /* 不明瞭 */
+  --color-prediction-unknown-bg: #eaeae9;    /* 不明背景 */
+  --color-prediction-unknown-text: #444444;  /* 不明テキスト */
+}
+:host(togostanza-manhattan-plot, togostanza-pagination-table) {
   --color-purple-dark: #21006e;
   --color-purple-light: #715ba3;
   --text-gray: #888;
@@ -70,7 +80,6 @@ border-color: #94928D;
 background-color: white;
 }
 
-
 /* ==============================
  togostanza-pagination-table
 ============================== */
@@ -84,6 +93,59 @@ background-color: white;
       min-height: auto !important;
     }
   }
+}
+
+/* ==============================
+ Transcript scores
+============================== */
+:host(togostanza-pagination-table) {
+  .alpha-missense,
+  .sift,
+  .polyphen {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    line-height: 1.3;
+    padding: 0.15em 0.55em;
+    border-radius: 999px;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #fff;
+  }
+
+/* AlphaMissense */
+  .alpha-missense[data-value='pathogenic'] {
+    background-color: var(--color-prediction-possibly-damaging);
+  }
+  .alpha-missense[data-value='ambiguous'] {
+    background-color: var(--color-prediction-ambiguous);
+  }
+  .alpha-missense[data-value='likely_benign'] {
+    background-color: var(--color-prediction-likely-benign);
+  }
+  
+  /* SIFT */
+  .sift[data-value='deleterious'] {
+    background-color: var(--color-prediction-damaging);
+  }
+  .sift[data-value='tolerated'] {
+    background-color: var(--color-prediction-tolerated);
+  }
+  
+  /* PolyPhen */
+  .polyphen[data-value='probably_damaging'] {
+    background-color: var(--color-prediction-damaging);
+  }
+  .polyphen[data-value='possibly_damaging'] {
+    background-color: var(--color-prediction-possibly-damaging);
+  }
+  .polyphen[data-value='benign'] {
+    background-color: var(--color-prediction-benign);
+  }
+  .polyphen[data-value='unknown'] {
+    background-color: var(--color-prediction-unknown-bg);
+    color: var(--color-prediction-unknown-text);
+  }  
 }
 
 /* ==============================
@@ -180,51 +242,4 @@ background-color: white;
       }
     }
   }
-}
-
-/* ==============================
- Transcript scores
-============================== */
-.alpha-missense,
-.sift,
-.polyphen {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35em;
-  line-height: 1.3;
-  padding: 0.15em 0.55em;
-  border-radius: 999px;
-  font-size: 0.95em;
-  font-weight: 600;
-  color: #fff;
-}
-
-/* AlphaMissense */
-.alpha-missense[data-value='pathogenic'] {
-  background-color: #ff5a54;
-}
-.alpha-missense[data-value='ambiguous'] {
-  background-color: #f5a623;
-}
-.alpha-missense[data-value='likely_benign'] {
-  background-color: #9dcf3a;
-}
-
-/* SIFT */
-.sift[data-value='deleterious'] {
-  background-color: #e8927a;
-}
-.sift[data-value='tolerated'] {
-  background-color: #24d636;
-}
-
-/* PolyPhen */
-.polyphen[data-value='probably_damaging'] {
-  background-color: #e85d04;
-}
-.polyphen[data-value='possibly_damaging'] {
-  background-color: #f5a623;
-}
-.polyphen[data-value='benign'] {
-  background-color: #2fa84f;
 }
