@@ -15,6 +15,9 @@
   --color-teal-hover: #73d4c7;
   --color-teal-focus-shadow: rgb(54 199 180 / 20%);
 
+  /* ---- Inactive ---- */
+  --color-inactive: #dfddea;
+
   /* ---- Text ---- */
   --text-white: #fff;
   --text-dark: #333;
@@ -135,16 +138,31 @@
     .tableWrapper {
       min-height: auto !important;
 
+      /* ---- Link ---- */
       td a {
         text-decoration: none;
 
         &:hover {
           text-decoration: underline;
           text-decoration-color: var(--color-teal);
+
+          label::after {
+            color: var(--color-teal);
+          }
         }
 
         label {
           color: var(--color-teal) !important;
+
+          &::after {
+            content: "\f35a";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            display: inline-block;
+            margin-left: 4px;
+            font-size: 10px;
+            color: var(--color-inactive);
+          }
         }
       }
 
