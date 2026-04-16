@@ -5,19 +5,30 @@
 ============================== */
 :host(togostanza-manhattan-plot),
 :host(togostanza-pagination-table) {
-  /* ---- Brand ---- */
+  /* ---- Brand / Purple ---- */
   --color-purple-dark: #21006e;
   --color-purple-light: #715ba3;
   --color-purple-slider: rgb(149 128 255 / 10%);
 
+  /* ---- Brand / Teal ---- */
+  --color-teal: #36c7b4;
+  --color-teal-hover: #73d4c7;
+  --color-teal-focus-shadow: rgb(54 199 180 / 20%);
+
   /* ---- Text ---- */
-  --text-gray: #888;
+  --text-white: #fff;
   --text-dark: #333;
+  --text-gray: #888;
   --text-muted: #94928d;
   --text-neutral: #444;
 
-  /* ---- Surface ---- */
+  /* ---- Surface / Border ---- */
   --bg-surface: #f8f9fa;
+  --border-color: #ddd;
+  --border-input: 1px solid var(--border-color);
+
+  /* ---- Typography ---- */
+  --font-size-xs: 0.75rem; /* 12px */
 
   /* ---- Prediction scores ---- */
   --color-prediction-damaging: #ff5a54;
@@ -27,37 +38,30 @@
   --color-prediction-likely-benign: #9dcf3a;
   --color-prediction-ambiguous: #bbba7e;
   --color-prediction-unknown-bg: #eaeae9;
-  --color-prediction-unknown-text: #444444;
+  --color-prediction-unknown-text: #444;
 
-  /* ---- Clinical significance: Pathogenic ---- */
+  /* ---- Clinical significance ---- */
   --color-cs-p: #ff5a54;
   --color-cs-p-bg: #ffeeed;
 
-  /* ---- Clinical significance: Likely Pathogenic ---- */
   --color-cs-lp: #ffae00;
   --color-cs-lp-bg: #fff7e6;
 
-  /* ---- Clinical significance: Uncertain Significance ---- */
   --color-cs-us: #94928d;
   --color-cs-us-bg: #eaeae9;
 
-  /* ---- Clinical significance: Likely Benign ---- */
   --color-cs-lb: #9dcf3a;
   --color-cs-lb-bg: #f3f9e6;
 
-  /* ---- Clinical significance: Benign ---- */
   --color-cs-b: #24d636;
   --color-cs-b-bg: #e5fbe7;
 
-  /* ---- Clinical significance: Conflicting Interpretations ---- */
   --color-cs-ci: #c654ff;
   --color-cs-ci-bg: #f9edff;
 
-  /* ---- Clinical significance: Other (DR/A/RF/PR/AF/O) ---- */
   --color-cs-other: #9c8200;
   --color-cs-other-bg: #fff7cf;
 
-  /* ---- Clinical significance: Not Provided / Not Assessed ---- */
   --color-cs-np: #94928d;
   --color-cs-np-bg: white;
 }
@@ -68,12 +72,81 @@
 ============================== */
 :host(togostanza-pagination-table) {
   main {
+    /* ---- Table option ---- */
     .tableOptionWrapper {
+      padding-top: 2px;
+      padding-left: 2px;
       min-height: auto;
+
+      .tableOption {
+        margin-bottom: 7px;
+
+        input {
+          padding: 12px 29px 12px 12px;
+          background: var(--bg-surface);
+          border: var(--border-input);
+
+          &:hover {
+            border-color: var(--color-teal-hover);
+          }
+
+          &:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px var(--color-teal-focus-shadow);
+          }
+
+          &:focus-visible {
+            outline: none;
+            border-color: var(--color-teal) !important;
+            box-shadow: 0 0 0 2px var(--color-teal-focus-shadow) !important;
+          }
+        }
+
+        select {
+          min-height: 26px;
+          padding: 2px 2px 2px 10px;
+          font-size: var(--font-size-xs);
+          color: var(--text-dark);
+          appearance: auto;
+          cursor: pointer;
+          background-color: var(--bg-surface);
+          border: var(--border-input) !important;
+          border-radius: var(--radius-sm);
+
+          &:hover {
+            border-color: var(--color-teal-hover);
+          }
+
+          &:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px var(--color-teal-focus-shadow);
+          }
+
+          &:focus-visible {
+            outline: none;
+            border-color: var(--color-teal) !important;
+            box-shadow: 0 0 0 2px var(--color-teal-focus-shadow) !important;
+          }
+        }
+      }
     }
 
+    /* ---- Table wrapper ---- */
     .tableWrapper {
       min-height: auto !important;
+
+      td a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: var(--color-teal);
+        }
+
+        label {
+          color: var(--color-teal) !important;
+        }
+      }
 
       /* ---- Transcript scores ---- */
       .alpha-missense,
@@ -86,7 +159,7 @@
         font-size: 0.95em;
         font-weight: 600;
         line-height: 1.3;
-        color: #fff;
+        color: var(--text-white);
         border-radius: 999px;
       }
 
@@ -205,6 +278,15 @@
       color: var(--color-cs-np);
       background-color: var(--color-cs-np-bg);
       border-color: var(--color-cs-np);
+    }
+  }
+
+  /* ---- Pagination ---- */
+  .paginationWrapper {
+    .serialPagination {
+      > .pageNumber {
+        display: none;
+      }
     }
   }
 }
