@@ -9,6 +9,8 @@
   --color-purple-dark: #21006e;
   --color-purple-light: #715ba3;
   --color-purple-slider: rgb(149 128 255 / 10%);
+  --color-purple-subtle: #f0eef8;
+  --color-purple-subtle-hover: rgb(54 199 180 / 15%);
 
   /* ---- Brand / Teal ---- */
   --color-teal: #36c7b4;
@@ -155,7 +157,7 @@
           color: var(--color-teal) !important;
 
           &::after {
-            content: "\f35a";
+            content: "\f08e";
             font-family: "Font Awesome 6 Free";
             font-weight: 900;
             display: inline-block;
@@ -300,12 +302,43 @@
   }
 
   /* ---- Pagination ---- */
-  .paginationWrapper {
-    .serialPagination {
-      > .pageNumber {
-        display: none;
+  .paginationNumList {
+    gap: 6px;
+  }
+
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    font-size: var(--font-size-xs);
+    font-weight: bold;
+    color: var(--color-purple-light);
+    cursor: pointer;
+    background: var(--color-purple-subtle) !important;
+    border: none !important;
+    border-radius: 50% !important;
+    transition: background 0.15s, color 0.15s;
+
+    &:hover {
+      color: var(--color-teal) !important;
+      background: var(--color-purple-subtle-hover) !important;
+    }
+
+    &.currentBtn {
+      color: var(--text-white);
+      background: var(--color-teal) !important;
+
+      &:hover {
+        color: var(--text-white) !important;
+        background: var(--color-teal-hover) !important;
       }
     }
+  }
+
+  .pageNumber {
+    display: none;
   }
 }
 
