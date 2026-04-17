@@ -312,7 +312,6 @@
     justify-content: center;
     width: 32px;
     height: 32px;
-    font-size: var(--font-size-xs);
     font-weight: bold;
     color: var(--color-purple-light);
     cursor: pointer;
