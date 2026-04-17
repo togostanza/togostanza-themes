@@ -365,10 +365,6 @@
             fill: var(--text-gray);
           }
 
-          #slider {
-            fill: var(--color-purple-slider);
-          }
-
           .slider-label {
             fill: var(--color-purple-dark);
           }
@@ -391,29 +387,18 @@
         color: var(--text-gray);
       }
 
-      #listingTableHead {
-        color: var(--color-purple-dark);
-        background-color: var(--bg-surface);
-      }
-
       .pagination {
         table {
           border: none;
           border-top: 1px solid var(--text-muted);
 
           tbody {
-            background-color: transparent;
-
             tr {
               border-bottom: 1px solid var(--border-color);
 
               td {
                 border-left: none;
               }
-            }
-
-            tr:nth-last-of-type(odd) {
-              background-color: transparent;
             }
           }
         }
