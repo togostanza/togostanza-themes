@@ -31,6 +31,9 @@
   --bg-surface: #f8f9fa;
   --border-color: #ddd;
   --border-input: 1px solid var(--border-color);
+  --border-table-light: #cacccd;
+  --tbody-border-bottom: 1px solid var(--border-table-light);
+  --table-border: 1px solid #3c3744;
 
   /* ---- Typography ---- */
   --font-size-xs: 0.75rem; /* 12px */
@@ -301,35 +304,47 @@
     }
   }
 
-  /* ---- Pagination ---- */
-  .paginationNumList {
-    gap: 6px;
-  }
-
-  .pagination {
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    font-weight: bold;
-    color: var(--color-purple-light);
-    border-radius: 50% !important;
-    transition: background 0.15s, color 0.15s;
-
-    &:hover {
-      color: var(--color-teal) !important;
-      background: var(--color-purple-subtle-hover) !important;
-    }
-
-    &.currentBtn {
-      &:hover {
-        color: var(--text-white) !important;
-        background: var(--color-teal-hover) !important;
+  /* ---- Pagination (paginationWrapper) ---- */
+  .paginationWrapper {
+    .arrowWrapper {
+      gap: 8px;
+      svg:hover path {
+        fill: var(--color-teal);
       }
     }
-  }
 
-  .pageNumber {
-    display: none;
+    .paginationNumList {
+      gap: 6px;
+    }
+
+    .pagination {
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      font-weight: bold;
+      color: var(--color-purple-light);
+      border-radius: 50% !important;
+      transition: background 0.15s, color 0.15s;
+
+      &:hover {
+        color: var(--color-teal) !important;
+        background: var(--color-purple-subtle-hover) !important;
+      }
+
+      &.currentBtn {
+        background: var(--color-teal) !important;
+        color: var(--text-white) !important;
+
+        &:hover {
+          color: var(--text-white) !important;
+          background: var(--color-teal-hover) !important;
+        }
+      }
+    }
+
+    .pageNumber {
+      display: none;
+    }
   }
 }
 
@@ -390,11 +405,21 @@
       .pagination {
         table {
           border: none;
-          border-top: 1px solid var(--text-muted);
+
+          #listingTableHead {
+            border-top: var(--table-border);
+            border-bottom: var(--tbody-border-bottom);
+          }
 
           tbody {
+            border-bottom: var(--table-border) !important;
+
             tr {
-              border-bottom: 1px solid var(--border-color);
+              border-bottom: var(--tbody-border-bottom);
+
+              &:last-child {
+                border-bottom: var(--table-border) !important;
+              }
 
               td {
                 border-left: none;
@@ -403,9 +428,67 @@
           }
         }
 
+        /* ---- Pagination block ---- */
         .pagination-block {
+          .page-btn {
+            border: none;
+            border-radius: 50%;
+            background-color: var(--color-purple-subtle);
+            color: var(--color-purple-light);
+            font-size: var(--font-size-xs);
+            font-weight: 700;
+            transition: background 0.15s, color 0.15s;
+
+            &:hover {
+              background-color: var(--color-purple-subtle-hover);
+              color: var(--color-teal);
+            }
+          }
+
+          /* 矢印ボタン */
+          #firstBtn,
+          #prevBtn,
+          #nextBtn,
+          #lastBtn {
+            font-size: 0;
+            background-color: transparent;
+
+            &::before {
+              font-family: "Font Awesome 6 Free";
+              font-weight: bold;
+              font-size: var(--font-size-xs);
+            }
+          }
+
+          #firstBtn::before {
+            content: "\f100";
+          }
+
+          #prevBtn::before {
+            content: "\f104";
+          }
+
+          #nextBtn::before {
+            content: "\f105";
+          }
+
+          #lastBtn::before {
+            content: "\f101";
+          }
+
+          /* 現在ページ */
           .page-number .page-btn.current {
-            background-color: var(--color-purple-light);
+            background-color: var(--color-teal);
+            color: var(--text-white);
+
+            &:hover {
+              background-color: var(--color-teal-hover);
+            }
+          }
+
+          /* ページ番号ラッパー */
+          #pageNumber {
+            gap: 6px;
           }
         }
       }
