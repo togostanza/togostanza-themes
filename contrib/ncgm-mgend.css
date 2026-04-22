@@ -7,36 +7,41 @@
 :host(togostanza-pagination-table) {
   /* ---- Brand / Purple ---- */
   --color-purple-dark: #21006e;
-  --color-purple-light: #715ba3;
-  --color-purple-slider: rgb(149 128 255 / 10%);
-  --color-purple-subtle: #f0eef8;
-  --color-purple-subtle-hover: rgb(54 199 180 / 15%);
+  --color-purple-muted: #715ba3;
 
   /* ---- Brand / Teal ---- */
   --color-teal: #36c7b4;
-  --color-teal-hover: #73d4c7;
-  --color-teal-focus-shadow: rgb(54 199 180 / 20%);
+  --color-teal-rgb: 54 199 180;
+  --color-teal-alpha-15: rgb(var(--color-teal-rgb) / 15%);
+  --color-teal-alpha-20: rgb(var(--color-teal-rgb) / 20%);
+  --color-teal-hover: color-mix(in srgb, var(--color-teal) 90%, black);
 
-  /* ---- Inactive ---- */
-  --color-inactive: #dfddea;
+  /* ---- Neutral ---- */
+  --color-neutral-dark: #444;
+  --color-neutral-mid: #808080;
+  --color-border-input: #bbb;
+  --color-neutral-muted: #ddd;
 
-  /* ---- Text ---- */
-  --text-white: #fff;
-  --text-dark: #333;
-  --text-gray: #888;
-  --text-muted: #94928d;
-  --text-neutral: #444;
+  --color-bg-page: #e5eaee;
+  --color-bg-mix-white-40: color-mix(in srgb, var(--color-bg-page) 40%, white);
 
-  /* ---- Surface / Border ---- */
-  --bg-surface: #f8f9fa;
-  --border-color: #ddd;
-  --border-input: 1px solid var(--border-color);
-  --border-table-light: #cacccd;
-  --tbody-border-bottom: 1px solid var(--border-table-light);
-  --table-border: 1px solid #3c3744;
+  --color-white: #fff;
+  --color-black-alpha-8: rgb(0 0 0 / 8%);
+
+  /* ---- Border / Shadow ---- */
+  --border-input: 1px solid var(--color-border-input);
+  --table-border-light: 1px solid var(--color-neutral-muted);
+  --table-border-dark: 1px solid var(--color-neutral-mid);
+
+  --shadow-inset: inset 0 1px 2px var(--color-black-alpha-8); /* 入力フィールド内側 */
+  --shadow-focus: 0 0 0 2px var(--color-teal-alpha-20); /* フォーカスリング */
 
   /* ---- Typography ---- */
   --font-size-xs: 0.75rem; /* 12px */
+
+  /* ---- Border Radius ---- */
+  --radius-sm: 4px;
+  --radius-3xl: 32px;
 
   /* ---- Prediction scores ---- */
   --color-prediction-damaging: #ff5a54;
@@ -71,28 +76,29 @@
   --color-cs-other-bg: #fff7cf;
 
   --color-cs-np: #94928d;
-  --color-cs-np-bg: white;
+  --color-cs-np-bg: #fff;
 }
 
-
 /* ==============================
- togostanza-pagination-table
+  togostanza-pagination-table
 ============================== */
 :host(togostanza-pagination-table) {
   main {
     /* ---- Table option ---- */
     .tableOptionWrapper {
+      min-height: auto;
       padding-top: 2px;
       padding-left: 2px;
-      min-height: auto;
 
       .tableOption {
         margin-bottom: 7px;
 
         input {
           padding: 12px 29px 12px 12px;
-          background: var(--bg-surface);
+          background: white;
           border: var(--border-input);
+          border-radius: var(--radius-3xl);
+          box-shadow: var(--shadow-inset);
 
           &:hover {
             border-color: var(--color-teal-hover);
@@ -100,13 +106,13 @@
 
           &:focus {
             outline: none;
-            box-shadow: 0 0 0 2px var(--color-teal-focus-shadow);
+            box-shadow: 0 0 0 2px var(--color-teal-alpha-20);
           }
 
           &:focus-visible {
             outline: none;
             border-color: var(--color-teal) !important;
-            box-shadow: 0 0 0 2px var(--color-teal-focus-shadow) !important;
+            box-shadow: 0 0 0 2px var(--color-teal-alpha-20) !important;
           }
         }
 
@@ -114,26 +120,26 @@
           min-height: 26px;
           padding: 2px 2px 2px 10px;
           font-size: var(--font-size-xs);
-          color: var(--text-dark);
+          color: var(--color-neutral-dark);
           appearance: auto;
           cursor: pointer;
-          background-color: var(--bg-surface);
+          background-color: white;
           border: var(--border-input) !important;
           border-radius: var(--radius-sm);
 
           &:hover {
-            border-color: var(--color-teal-hover);
+            border-color: var(--color-teal-hover) !important;
           }
 
           &:focus {
             outline: none;
-            box-shadow: 0 0 0 2px var(--color-teal-focus-shadow);
+            box-shadow: 0 0 0 2px var(--color-teal-alpha-20);
           }
 
           &:focus-visible {
             outline: none;
             border-color: var(--color-teal) !important;
-            box-shadow: 0 0 0 2px var(--color-teal-focus-shadow) !important;
+            box-shadow: 0 0 0 2px var(--color-teal-alpha-20) !important;
           }
         }
       }
@@ -149,24 +155,28 @@
 
         &:hover {
           text-decoration: underline;
-          text-decoration-color: var(--color-teal);
+          text-decoration-color: var(--color-teal-hover);
 
           label::after {
-            color: var(--color-teal);
+            color: var(--color-teal-hover);
           }
         }
 
         label {
           color: var(--color-teal) !important;
 
+          &:hover {
+            color: var(--color-teal-hover) !important;
+          }
+
           &::after {
-            content: "\f08e";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
             display: inline-block;
             margin-left: 4px;
+            font-family: 'Font Awesome 6 Free';
             font-size: 10px;
-            color: var(--color-inactive);
+            font-weight: 900;
+            color: var(--color-neutral-muted);
+            content: '\f08e';
           }
         }
       }
@@ -176,54 +186,54 @@
       .sift,
       .polyphen {
         display: inline-flex;
-        align-items: center;
         gap: 0.35em;
+        align-items: center;
         padding: 0.15em 0.55em;
         font-size: 0.95em;
         font-weight: 600;
         line-height: 1.3;
-        color: var(--text-white);
+        color: var(--color-white);
         border-radius: 999px;
       }
 
       /* AlphaMissense */
-      .alpha-missense[data-value="pathogenic"] {
+      .alpha-missense[data-value='pathogenic'] {
         background-color: var(--color-prediction-possibly-damaging);
       }
 
-      .alpha-missense[data-value="ambiguous"] {
+      .alpha-missense[data-value='ambiguous'] {
         background-color: var(--color-prediction-ambiguous);
       }
 
-      .alpha-missense[data-value="likely_benign"] {
+      .alpha-missense[data-value='likely_benign'] {
         background-color: var(--color-prediction-likely-benign);
       }
 
       /* SIFT */
-      .sift[data-value="deleterious"] {
+      .sift[data-value='deleterious'] {
         background-color: var(--color-prediction-damaging);
       }
 
-      .sift[data-value="tolerated"] {
+      .sift[data-value='tolerated'] {
         background-color: var(--color-prediction-tolerated);
       }
 
       /* PolyPhen */
-      .polyphen[data-value="probably_damaging"] {
+      .polyphen[data-value='probably_damaging'] {
         background-color: var(--color-prediction-damaging);
       }
 
-      .polyphen[data-value="possibly_damaging"] {
+      .polyphen[data-value='possibly_damaging'] {
         background-color: var(--color-prediction-possibly-damaging);
       }
 
-      .polyphen[data-value="benign"] {
+      .polyphen[data-value='benign'] {
         background-color: var(--color-prediction-benign);
       }
 
-      .polyphen[data-value="unknown"] {
-        background-color: var(--color-prediction-unknown-bg);
+      .polyphen[data-value='unknown'] {
         color: var(--color-prediction-unknown-text);
+        background-color: var(--color-prediction-unknown-bg);
       }
     }
   }
@@ -234,7 +244,6 @@
     align-items: center;
 
     &::before {
-      content: attr(data-value);
       display: inline-block;
       width: 18px;
       height: 18px;
@@ -242,62 +251,63 @@
       font-size: 11px;
       font-weight: bold;
       line-height: 20px;
-      text-align: center;
       vertical-align: top;
-      border-width: 1px;
+      text-align: center;
+      content: attr(data-value);
       border-style: solid;
+      border-width: 1px;
       border-radius: 10px;
     }
 
-    &[data-value="P"]::before {
+    &[data-value='P']::before {
       color: var(--color-cs-p);
       background-color: var(--color-cs-p-bg);
       border-color: var(--color-cs-p);
     }
 
-    &[data-value="LP"]::before {
+    &[data-value='LP']::before {
       color: var(--color-cs-lp);
       background-color: var(--color-cs-lp-bg);
       border-color: var(--color-cs-lp);
     }
 
-    &[data-value="US"]::before {
+    &[data-value='US']::before {
       color: var(--color-cs-us);
       background-color: var(--color-cs-us-bg);
       border-color: var(--color-cs-us);
     }
 
-    &[data-value="LB"]::before {
+    &[data-value='LB']::before {
       color: var(--color-cs-lb);
       background-color: var(--color-cs-lb-bg);
       border-color: var(--color-cs-lb);
     }
 
-    &[data-value="B"]::before {
+    &[data-value='B']::before {
       color: var(--color-cs-b);
       background-color: var(--color-cs-b-bg);
       border-color: var(--color-cs-b);
     }
 
-    &[data-value="CI"]::before {
+    &[data-value='CI']::before {
       color: var(--color-cs-ci);
       background-color: var(--color-cs-ci-bg);
       border-color: var(--color-cs-ci);
     }
 
-    &[data-value="DR"]::before,
-    &[data-value="A"]::before,
-    &[data-value="RF"]::before,
-    &[data-value="PR"]::before,
-    &[data-value="AF"]::before,
-    &[data-value="O"]::before {
+    &[data-value='DR']::before,
+    &[data-value='A']::before,
+    &[data-value='RF']::before,
+    &[data-value='PR']::before,
+    &[data-value='AF']::before,
+    &[data-value='O']::before {
       color: var(--color-cs-other);
       background-color: var(--color-cs-other-bg);
       border-color: var(--color-cs-other);
     }
 
-    &[data-value="NP"]::before,
-    &[data-value="AN"]::before {
+    &[data-value='NP']::before,
+    &[data-value='AN']::before {
       color: var(--color-cs-np);
       background-color: var(--color-cs-np-bg);
       border-color: var(--color-cs-np);
@@ -308,6 +318,7 @@
   .paginationWrapper {
     .arrowWrapper {
       gap: 8px;
+
       svg:hover path {
         fill: var(--color-teal);
       }
@@ -322,18 +333,20 @@
       width: 32px;
       height: 32px;
       font-weight: bold;
-      color: var(--color-purple-light);
+      color: var(--color-purple-muted);
       border-radius: 50% !important;
-      transition: background 0.15s, color 0.15s;
+      transition:
+        background 0.15s,
+        color 0.15s;
 
       &:hover {
         color: var(--color-teal) !important;
-        background: var(--color-purple-subtle-hover) !important;
+        background: var(--color-teal-alpha-15) !important;
       }
 
       &.currentBtn {
         &:hover {
-          color: var(--text-white) !important;
+          color: var(--color-white) !important;
           background: var(--color-teal-hover) !important;
         }
       }
@@ -345,9 +358,8 @@
   }
 }
 
-
 /* ==============================
- togostanza-manhattan-plot
+  togostanza-manhattan-plot
 ============================== */
 :host(togostanza-manhattan-plot) {
   main {
@@ -356,25 +368,25 @@
     }
 
     h2 {
-      color: var(--text-dark);
+      color: var(--color-neutral-dark);
     }
 
     .info-section {
       #study-name,
       #project-name {
-        color: var(--text-gray);
+        color: var(--color-neutral-mid);
       }
     }
 
     .chart-section {
       .info-key {
-        color: var(--text-gray);
+        color: var(--color-neutral-mid);
       }
 
       #control {
         #slider_container {
           .info-key {
-            fill: var(--text-gray);
+            fill: var(--color-neutral-mid);
           }
 
           .slider-label {
@@ -384,7 +396,7 @@
 
         #ctrl_button {
           .info-key {
-            color: var(--text-gray);
+            color: var(--color-neutral-mid);
 
             #range_text {
               color: var(--color-purple-dark);
@@ -396,7 +408,7 @@
 
     .table-section {
       .table-info .total-overthresh-variants .info-key {
-        color: var(--text-gray);
+        color: var(--color-neutral-mid);
       }
 
       .pagination {
@@ -404,18 +416,18 @@
           border: none;
 
           #listingTableHead {
-            border-top: var(--table-border);
-            border-bottom: var(--tbody-border-bottom);
+            border-top: var(--table-border-dark);
+            border-bottom: var(--table-border-light);
           }
 
           tbody {
-            border-bottom: var(--table-border) !important;
+            border-bottom: var(--table-border-dark) !important;
 
             tr {
-              border-bottom: var(--tbody-border-bottom);
+              border-bottom: var(--table-border-light);
 
               &:last-child {
-                border-bottom: var(--table-border) !important;
+                border-bottom: var(--table-border-dark) !important;
               }
 
               td {
@@ -428,17 +440,19 @@
         /* ---- Pagination block ---- */
         .pagination-block {
           .page-btn {
-            border: none;
-            border-radius: 50%;
-            background-color: var(--color-purple-subtle);
-            color: var(--color-purple-light);
             font-size: var(--font-size-xs);
             font-weight: 700;
-            transition: background 0.15s, color 0.15s;
+            color: var(--color-purple-muted);
+            background-color: var(--color-bg-mix-white-40);
+            border: none;
+            border-radius: 50%;
+            transition:
+              background 0.15s,
+              color 0.15s;
 
             &:hover {
-              background-color: var(--color-purple-subtle-hover);
               color: var(--color-teal);
+              background-color: var(--color-teal-alpha-15);
             }
           }
 
@@ -451,32 +465,32 @@
             background-color: transparent;
 
             &::before {
-              font-family: "Font Awesome 6 Free";
-              font-weight: bold;
+              font-family: 'Font Awesome 6 Free';
               font-size: var(--font-size-xs);
+              font-weight: bold;
             }
           }
 
           #firstBtn::before {
-            content: "\f100";
+            content: '\f100';
           }
 
           #prevBtn::before {
-            content: "\f104";
+            content: '\f104';
           }
 
           #nextBtn::before {
-            content: "\f105";
+            content: '\f105';
           }
 
           #lastBtn::before {
-            content: "\f101";
+            content: '\f101';
           }
 
           /* 現在ページ */
           .page-number .page-btn.current {
+            color: var(--color-white);
             background-color: var(--color-teal);
-            color: var(--text-white);
 
             &:hover {
               background-color: var(--color-teal-hover);
