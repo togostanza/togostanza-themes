@@ -332,9 +332,6 @@
       }
 
       &.currentBtn {
-        background: var(--color-teal) !important;
-        color: var(--text-white) !important;
-
         &:hover {
           color: var(--text-white) !important;
           background: var(--color-teal-hover) !important;
