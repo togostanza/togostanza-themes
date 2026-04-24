@@ -158,9 +158,8 @@
         }
 
         /* min-heightはtable-cellに効かないためpaddingで対応 */
-        /* 複数行のときは自動で伸びる */
         td {
-          padding: 4px 12px !important;
+          padding: 5px 12px !important;
         }
       }
 
