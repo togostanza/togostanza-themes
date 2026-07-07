@@ -434,6 +434,7 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 					> tbody > tr {
 						> td {
 							border-bottom: 1px solid #dee2e6;
+							vertical-align: top;
 						}
 						
 						&:last-child {
