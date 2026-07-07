@@ -103,39 +103,40 @@ togostanza-hash-table {
   font-weight: bold;
   vertical-align: top;
 }
-/* P: 危険（赤系） */
+
+/* P: 危険（赤系） --color-sign-dangerous */
 .clinical-significance[data-sign=P]:before {
-  color: #FF5A54;
-  border-color: #FF5A54;
+  color: #ff5a54;
+  border-color: #ff5a54;
   background-color: #ffeeed;
 }
-/* PLP: 低危険（オレンジ系） */
+/* PLP: 低危険（オレンジ系） --color-sign-lowdangerous */
 .clinical-significance[data-sign=PLP]:before {
   color: #ff953c;
   border-color: #ff953c;
   background-color: #ffe3cb;
 }
-/* LP: 警告（黄色系） */
+/* LP: 警告（黄色系） --color-sign-warning */
 .clinical-significance[data-sign=LP]:before {
-  color: #FFAE00;
-  border-color: #FFAE00;
-  background-color: #fff7e6;
+  color: #ffae00;
+  border-color: #ffae00;
+  background-color: #fff7e5;
 }
-/* LPLP: 低危険（オレンジ系） */
+/* LPLP: 低危険（オレンジ系） --color-sign-lowdangerous */
 .clinical-significance[data-sign=LPLP]:before {
   color: #ff953c;
   border-color: #ff953c;
   background-color: #ffe3cb;
 }
-/* ERA / LRA / URA: リスクアレル（黄色系） */
+/* ERA / LRA / URA: リスクアレル（黄色系） --color-sign-warning */
 .clinical-significance[data-sign=ERA]:before,
 .clinical-significance[data-sign=LRA]:before,
 .clinical-significance[data-sign=URA]:before {
-  color: #FFAE00;
-  border-color: #FFAE00;
+  color: #ffae00;
+  border-color: #ffae00;
   background-color: #fff7e5;
 }
-/* US / VH / VM / VL: 不明（くすんだ黄緑系） */
+/* US / VH / VM / VL: 不明（くすんだ黄緑系） --color-sign-unknown */
 .clinical-significance[data-sign=US]:before,
 .clinical-significance[data-sign=VH]:before,
 .clinical-significance[data-sign=VM]:before,
@@ -144,26 +145,26 @@ togostanza-hash-table {
   border-color: #bbba7e;
   background-color: #f9f9f3;
 }
-/* LB: 正常（黄緑系） */
+/* LB: 正常（黄緑系） --color-sign-normal */
 .clinical-significance[data-sign=LB]:before {
-  color: #9DCF3A;
-  border-color: #9DCF3A;
+  color: #9dcf3a;
+  border-color: #9dcf3a;
   background-color: #f3f9e6;
 }
-/* B: 安全（緑系） */
+/* B: 安全（緑系） --color-sign-safe */
 .clinical-significance[data-sign=B]:before {
-  color: #24D636;
-  border-color: #24D636;
-  background-color: #e5fbe7;
+  color: #04af58;
+  border-color: #04af58;
+  background-color: #e7fef2;
 }
-/* CC: 競合（紫系） ※旧CI */
+/* CI / CC: 競合（紫系） --color-sign-modifier */
 .clinical-significance[data-sign=CI]:before,
 .clinical-significance[data-sign=CC]:before {
-  color: #C654FF;
-  border-color: #C654FF;
+  color: #c654ff;
+  border-color: #c654ff;
   background-color: #f9edff;
 }
-/* DR / CS / A / RF / PR / AF: その他（茶系） */
+/* DR / CS / A / RF / PR / AF: その他（茶系） --color-sign-other */
 .clinical-significance[data-sign=DR]:before,
 .clinical-significance[data-sign=CS]:before,
 .clinical-significance[data-sign=A]:before,
@@ -171,18 +172,19 @@ togostanza-hash-table {
 .clinical-significance[data-sign=PR]:before,
 .clinical-significance[data-sign=AF]:before,
 .clinical-significance[data-sign=O]:before {
-  color: #9C8200;
-  border-color: #9C8200;
+  color: #9c8200;
+  border-color: #9c8200;
   background-color: #fff7cf;
 }
-/* NP / NC / AN: 未分類（グレー） */
+/* NP / NC / AN: 未分類（グレー） --color-gray */
 .clinical-significance[data-sign=NP]:before,
 .clinical-significance[data-sign=NC]:before,
 .clinical-significance[data-sign=AN]:before {
   color: #444;
-  border-color: #94928D;
+  border-color: #94928d;
   background-color: white;
 }
+
 .clinical-significance-full {
   font-size: 12px;
   font-weight: bold;
@@ -194,8 +196,8 @@ togostanza-hash-table {
   margin-bottom: 2px;
 }
 .clinical-significance-full[data-sign=P] {
-  color: #FF5A54;
-  border-color: #FF5A54;
+  color: #ff5a54;
+  border-color: #ff5a54;
   background-color: #ffeeed;
 }
 .clinical-significance-full[data-sign=PLP] {
@@ -204,9 +206,9 @@ togostanza-hash-table {
   background-color: #ffe3cb;
 }
 .clinical-significance-full[data-sign=LP] {
-  color: #FFAE00;
-  border-color: #FFAE00;
-  background-color: #fff7e6;
+  color: #ffae00;
+  border-color: #ffae00;
+  background-color: #fff7e5;
 }
 .clinical-significance-full[data-sign=LPLP] {
   color: #ff953c;
@@ -216,8 +218,8 @@ togostanza-hash-table {
 .clinical-significance-full[data-sign=ERA],
 .clinical-significance-full[data-sign=LRA],
 .clinical-significance-full[data-sign=URA] {
-  color: #FFAE00;
-  border-color: #FFAE00;
+  color: #ffae00;
+  border-color: #ffae00;
   background-color: #fff7e5;
 }
 .clinical-significance-full[data-sign=US],
@@ -229,19 +231,19 @@ togostanza-hash-table {
   background-color: #f9f9f3;
 }
 .clinical-significance-full[data-sign=LB] {
-  color: #9DCF3A;
-  border-color: #9DCF3A;
+  color: #9dcf3a;
+  border-color: #9dcf3a;
   background-color: #f3f9e6;
 }
 .clinical-significance-full[data-sign=B] {
-  color: #24D636;
-  border-color: #24D636;
-  background-color: #e5fbe7;
+  color: #04af58;
+  border-color: #04af58;
+  background-color: #e7fef2;
 }
 .clinical-significance-full[data-sign=CI],
 .clinical-significance-full[data-sign=CC] {
-  color: #C654FF;
-  border-color: #C654FF;
+  color: #c654ff;
+  border-color: #c654ff;
   background-color: #f9edff;
 }
 .clinical-significance-full[data-sign=DR],
@@ -251,15 +253,15 @@ togostanza-hash-table {
 .clinical-significance-full[data-sign=PR],
 .clinical-significance-full[data-sign=AF],
 .clinical-significance-full[data-sign=O] {
-  color: #9C8200;
-  border-color: #9C8200;
+  color: #9c8200;
+  border-color: #9c8200;
   background-color: #fff7cf;
 }
 .clinical-significance-full[data-sign=NP],
 .clinical-significance-full[data-sign=NC],
 .clinical-significance-full[data-sign=AN] {
   color: #444;
-  border-color: #94928D;
+  border-color: #94928d;
   background-color: white;
 }
 
