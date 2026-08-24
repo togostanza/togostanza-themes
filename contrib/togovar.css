@@ -507,6 +507,11 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 		tbody > tr > td {
 			padding: 4px;
 		}
+
+		thead > tr > th#__togostanza_id__,
+		tbody > tr > td:last-child {
+		  display: none;
+		}
 	
 		thead {
 			border-bottom: none;
@@ -528,6 +533,25 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 		}
 	
 		tbody > tr > td {
+			.report-link {
+			  display: inline-flex;
+			  width: 20px;
+			  height: 20px;
+			  align-items: center;
+			  justify-content: center;
+			  vertical-align: middle;
+			
+				.report-icon {
+				  display: inline-block;
+				  width: 16px;
+				  height: 16px;
+				  background-image: url("https://raw.githubusercontent.com/togovar/togovar/refs/heads/staging/app/frontend/src/assets/icons/icon-variant-report.svg");
+				  background-repeat: no-repeat;
+				  background-position: center;
+				  background-size: contain;
+				}
+			}
+			
 	      .chromosome-position {
 	         > .chromosome {
 	          display: inline;
@@ -537,6 +561,10 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 	          }
 	        }
 	      }
+
+		  .variant-type {
+			  font-weight: bold;
+		  }
 	
 			.frequency-graph {
 				font-size: 0;
@@ -689,6 +717,93 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 					}	
 				}
 			}
+
+
+
+  .remains-content {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden;
+
+	    .consequence-item {
+    flex: 0 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .remains-badge {
+    display: inline-block;
+    flex: 0 0 auto;
+    padding: 0 4px;
+    margin-left: 4px;
+    overflow: visible;
+    text-overflow: clip;
+    font-size: 10px;
+    line-height: 14px;
+    vertical-align: middle;
+    white-space: nowrap;
+    background-color: var(--color-light-gray);
+    border: solid 1px var(--color-gray);
+    border-radius: 7px;
+
+    &:empty,
+    &[data-remains="0"],
+    &[data-remains=""] {
+      display: none;
+    }
+  }
+  }
+
+.variant-function {
+  display: inline-block;
+  padding: 0 8px;
+  color: white;
+  border-radius: 9px;
+
+  &[data-function="T"],
+  &[data-function="B"] {
+    background-color: var(--color-sign-safe);
+  }
+
+  &[data-function="LB"] {
+    background-color: var(--color-sign-normal);
+  }
+
+  &[data-function="POSSD"],
+  &[data-function="LP"] {
+    background-color: var(--color-sign-warning);
+  }
+
+  &[data-function="D"],
+  &[data-function="PROBD"] {
+    background-color: var(--color-sign-dangerous);
+  }
+
+  &[data-function="U"] {
+    color: var(--color-black);
+    background-color: #eaeae9;
+  }
+
+  &[data-function="AMBIGUOUS"] {
+    background-color: var(--color-sign-unknown);
+  }
+
+  &[data-function="CADD_HIGH"] {
+    background-color: var(--color-sign-dangerous);
+  }
+
+  &[data-function="CADD_MODERATE"] {
+    background-color: var(--color-sign-warning);
+  }
+
+  &[data-function="CADD_LOW"] {
+    background-color: var(--color-sign-safe);
+  }
+}
+
 		}
 	}
 }
