@@ -497,7 +497,36 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 
 :host(togostanza-scroll-table) .tableWrapper {
   --togostanza-fonts-font_family: 'Roboto Condensed', sans-serif;
-  max-height: 500px;
+  max-height: 400px;
+     .hyper-text {
+	 color: var(--color-key-dark3);
+	&:hover {
+		color: var(--color-key-dark1);
+	}
+	   
+    &[href]:not([href='']) {
+      &::after {
+        display: inline-block;
+        margin-left: 0.25em;
+        font-family: 'Font Awesome 7 Free', sans-serif;
+        font-weight: 900;
+        color: var(--color-gray-light);
+      }
+    }
+  
+    &[href]:not([href='']):hover::after {
+      color: var(--color-key);
+    }
+  
+    &.-external {
+      &[href]:not([href='']) {
+        &::after {
+          font-size: 0.7em;
+          content: var(--icon-arrow-up-right-from-square);
+        }
+      }
+    }
+  }
 	
 	> table {
 		line-height: 1;
@@ -518,9 +547,10 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 	
 			> tr > th {
 			  position: sticky;
+			  top: 0;
 			  padding-top: 7px;
 			  white-space: nowrap;
-			  z-index: 2;
+			   z-index: 20;
 			  font-weight: bold;
 			  color: #4e5059;
 			  background: white;
@@ -529,28 +559,42 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 				  content: "";
 				  border-bottom: solid 0.5px #4e5059;
 				}
+
+				.fixed {
+				  z-index: 30;
+				}
 			}
 		}
 	
 		tbody > tr > td {
-			.report-link {
-			  display: inline-flex;
-			  width: 20px;
-			  height: 20px;
-			  align-items: center;
-			  justify-content: center;
-			  vertical-align: middle;
-			
-				.report-icon {
-				  display: inline-block;
-				  width: 16px;
-				  height: 16px;
-				  background-image: url("https://raw.githubusercontent.com/togovar/togovar/refs/heads/staging/app/frontend/src/assets/icons/icon-variant-report.svg");
-				  background-repeat: no-repeat;
-				  background-position: center;
-				  background-size: contain;
-				}
+			.fixed {
+			  z-index: 10;
 			}
+			
+		.report-link {
+		  position: relative;
+		  top: 2px;
+		  display: inline-flex;
+		  align-items: center;
+		  justify-content: center;
+		  width: 19px;
+		  height: 19px;
+		  text-decoration: none;
+
+			&:hover > .report-icon,
+			&:focus-visible > .report-icon {
+		  background-color: var(--color-key-dark1);
+		}
+			 .report-icon {
+			  display: block;
+			  width: 16px;
+			  height: 16px;
+			  background-color: var(--color-key-dark3);
+			  background-image: none;
+			  -webkit-mask: url("https://raw.githubusercontent.com/togovar/togovar/refs/heads/staging/app/frontend/src/assets/icons/icon-variant-report.svg") center / contain no-repeat;
+			  mask: url("https://raw.githubusercontent.com/togovar/togovar/refs/heads/staging/app/frontend/src/assets/icons/icon-variant-report.svg") center / contain no-repeat;
+			}
+		}
 			
 	      .chromosome-position {
 	         > .chromosome {
