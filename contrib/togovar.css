@@ -495,28 +495,199 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
  togostanza-scroll-table
 ============================== */
 
-:host(togostanza-scroll-table) .tableWrapper > table {
-	line-height: 1;
-	position: relative;
-
-	thead > tr > th,
-	tbody > tr > td {
-		padding: 4px;
-	}
-
-	thead {
-		border-bottom: none;
-
-		> tr > th {
-		  padding-top: 7px;
-		  white-space: nowrap;
-		  z-index: 1;
-		  font-weight: bold;
-		  color: #4e5059;
-
-			&::after {
-			  content: "";
-			  border-bottom: solid 0.5px #4e5059;
+:host(togostanza-scroll-table) .tableWrapper {
+  --togostanza-fonts-font_family: 'Roboto Condensed', sans-serif;
+  max-height: 500px;
+	
+	> table {
+		line-height: 1;
+		border-top: none;
+		
+		thead > tr > th,
+		tbody > tr > td {
+			padding: 4px;
+		}
+	
+		thead {
+			border-bottom: none;
+	
+			> tr > th {
+			  position: sticky;
+			  padding-top: 7px;
+			  white-space: nowrap;
+			  z-index: 2;
+			  font-weight: bold;
+			  color: #4e5059;
+			  background: white;
+	
+				&::after {
+				  content: "";
+				  border-bottom: solid 0.5px #4e5059;
+				}
+			}
+		}
+	
+		tbody > tr > td {
+	      .chromosome-position {
+	         > .chromosome {
+	          display: inline;
+	          font-weight: 700;
+	          &::after {
+	            content: ": ";
+	          }
+	        }
+	      }
+	
+			.frequency-graph {
+				font-size: 0;
+				white-space: nowrap;
+	
+				> .dataset {
+					--frequency-dataset-color: var(--color-dataset-foreign);
+					position: relative;
+					box-sizing: border-box;
+					display: inline-block;
+					width: 9px;
+					height: 21px;
+					margin-right: 5px;
+					vertical-align: middle;
+					background-color: white;
+					border: solid 1px var(--frequency-dataset-color);
+	
+					&[data-dataset="gem_j_wga"] {
+						border-color: var(--color-dataset-gemj);
+					}
+					
+					&[data-dataset="jga_wgs"],
+					&[data-dataset="jga_wes"],
+					&[data-dataset="jga_snp"] {
+						border-color: var(--color-dataset-jga);
+					}
+	
+					&[data-dataset="ncbn"] {
+						border-color: var(--color-dataset-ncbn);
+					}
+	
+					&[data-dataset="hgvd"] {
+						border-color: var(--color-dataset-hgvd);
+					}
+	
+					&[data-dataset^="tommo"] {
+						border-color: var(--color-dataset-tommo);
+					}
+	
+					&[data-dataset^="bbj"] {
+						border-color: var(--color-dataset-bbj);
+					}
+	
+					&[data-dataset="jogo"] {
+						border-color: var(--color-dataset-jogo);
+					}
+	
+					&[data-allele-count="1"] {
+				      background-color: var(--color-singleton);
+				    }
+					
+					&[data-frequency=na] {
+					    background-color: #f4f4f4;
+					    border-color: #d4d3d1;
+					}
+	
+					/* blocks */
+					&::before {
+						position: absolute;
+						bottom: 1px;
+						left: 1px;
+						display: none;
+						width: 5px;
+						content: "";
+						background-image: repeating-linear-gradient(to top, var(--frequency-dataset-color) 0, var(--frequency-dataset-color) 2px, transparent 2px, transparent 3px);
+					}
+	
+					&[data-frequency="<0.0001"]::before {
+					    display: block;
+					    height: 2px;
+					}
+					&[data-frequency="<0.001"]::before {
+					    display: block;
+					    height: 5px;
+					}
+					&[data-frequency="<0.01"]::before {
+					    display: block;
+					    height: 8px;
+					}
+					&[data-frequency="<0.05"]::before {
+					    display: block;
+					    height: 11px;
+					}
+					&[data-frequency="<0.5"]::before {
+					    display: block;
+					    height: 14px;
+					}
+					&[data-frequency="≥0.5"]::before {
+					    display: block;
+					    height: 17px;
+					}
+	
+					&[data-dataset="gem_j_wga"]::before {
+						background-image: repeating-linear-gradient(to top, var(--color-dataset-gemj) 0, var(--color-dataset-gemj) 2px, transparent 2px, transparent 3px);
+					}
+					
+					&[data-dataset="jga_wgs"]::before ,
+					&[data-dataset="jga_wes"]::before ,
+					&[data-dataset="jga_snp"]::before  {
+						background-image: repeating-linear-gradient(to top, var(--color-dataset-jga) 0, var(--color-dataset-jga) 2px, transparent 2px, transparent 3px);
+					}
+	
+					&[data-dataset^="tommo"]::before  {
+						background-image: repeating-linear-gradient(to top, var(--color-dataset-tommo) 0, var(--color-dataset-tommo) 2px, transparent 2px, transparent 3px);
+					}
+	
+					&[data-dataset="ncbn"]::before  {
+						background-image: repeating-linear-gradient(to top, var(--color-dataset-ncbn) 0, var(--color-dataset-ncbn) 2px, transparent 2px, transparent 3px);
+					}
+	
+					&[data-dataset="hgvd"]::before {
+						background-image: repeating-linear-gradient(to top, var(--color-dataset-hgvd) 0, var(--color-dataset-hgvd) 2px, transparent 2px, transparent 3px);
+					}
+	
+					&[data-dataset^="bbj"]::before  {
+						background-image: repeating-linear-gradient(to top, var(--color-dataset-bbj) 0, var(--color-dataset-bbj) 2px, transparent 2px, transparent 3px);
+					}
+	
+					&[data-dataset="jogo"]::before  {
+						background-image: repeating-linear-gradient(to top, var(--color-dataset-jogo) 0, var(--color-dataset-jogo) 2px, transparent 2px, transparent 3px);
+					}
+	
+					> .marker {
+					  position: absolute;
+					  top: -5px;
+					  box-sizing: border-box;
+					  display: block;
+					  width: 9px;
+					  height: 9px;
+					  background-repeat: no-repeat;
+					  background-position: center;
+					  border-radius: 1.5px;
+					  z-index: 1;
+					}
+					> .marker.homozygote-marker {
+					  top: -5px;
+					  right: -5px;
+					  background-image: url("https://raw.githubusercontent.com/togovar/togovar/refs/heads/staging/app/frontend/src/assets/icons/homozygote.svg");
+					  background-size: cover;
+					}
+					> .marker.hemizygote-marker {
+					  top: calc(5px);
+					  right: -5px;
+					  background-image: url("https://raw.githubusercontent.com/togovar/togovar/refs/heads/staging/app/frontend/src/assets/icons/hemizygote.svg");
+					  background-size: cover;
+					}
+					> .marker.hemizygote-marker:only-child {
+					  top: -5px;
+					  right: -5px;
+					}	
+				}
 			}
 		}
 	}
