@@ -537,8 +537,7 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 			padding: 4px;
 		}
 
-		thead > tr > th#__togostanza_id__,
-		tbody > tr > td:last-child {
+		thead > tr > th#__togostanza_id__ {
 		  display: none;
 		}
 	
