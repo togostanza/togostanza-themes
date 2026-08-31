@@ -494,6 +494,502 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
  togostanza-scroll-table
 ============================== */
 
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+togostanza-tree, togostanza-barchart, togostanza-piechart, togostanza-linechart, togostanza-scatterplot, togostanza-scorecard, togostanza-text, togostanza-pagination-table, togostanza-hash-table, togostanza-scroll-table {
+  --togostanza-series-0-color: #94d0da;
+  --togostanza-series-1-color: #249eb3;
+  --togostanza-series-2-color: #dcf1f9;
+  --togostanza-series-3-color: #0f89ac;
+  --togostanza-series-4-color: #0f5b6d;
+  --togostanza-series-5-color: #093b47;
+  --togostanza-background-color: #FFFFFF;
+  --togostanza-font-family: 'Roboto Condensed', sans-serif;
+  --togostanza-axis-color: #444444;
+  --togostanza-axis-width: 1;
+  --togostanza-grid-color: #f5f5f5;
+  --togostanza-grid-dash-length: 0;
+  --togostanza-grid-dash-opacity: 1;
+  --togostanza-grid-width: 0;
+  --togostanza-tick-color: #444444;
+  --togostanza-tick-length: 1.5;
+  --togostanza-tick-width: 0.5;
+  --togostanza-label-font-color: #444444;
+  --togostanza-label-font-size: 10;
+  --togostanza-border-color: #444444;
+  --togostanza-border-width: 0.5;
+  --togostanza-title-font-color: #444444;
+  --togostanza-title-font-size: 12;
+  --togostanza-title-font-weight: 400;
+  --togostanza-line-width: 1;
+  --togostanza-opacity: 0.8;
+  --togostanza-node-size: 100;
+  --togostanza-edge-color: #EEEEEE;
+  --togostanza-text-font-color: #444444;
+  --togostanza-text-font-size: 12px;
+  --togostanza-text-font-weight: 400;
+  --togostanza-table-border: 0px solid #CCCCCC;
+  --togostanza-table-shadow: 1px 1px 3px 1px #EEEEEE;
+  --togostanza-thead-border-bottom: 1px solid #444444;
+  --togostanza-thead-font-color: #94928d;
+  --togostanza-thead-background-color: #FFFFFF;
+  --togostanza-thead-font-size: 12px;
+  --togostanza-thead-font-weight: 400;
+  --togostanza-tbody-border-bottom: 1px solid #dee2e6;
+  --togostanza-tbody-font-color: #444444;
+  --togostanza-tbody-font-size: 14px;
+  --togostanza-tbody-font-weight: 400;
+  --togostanza-tbody-odd-background-color: #FFFFFF;
+  --togostanza-tbody-even-background-color: #FFFFFF;
+  --togostanza-control-border: 1px solid #aaa;
+  --togostanza-control-active-color: #249eb3;
+  --togostanza-non-active-color: #CCC;
+  --togostanza-control-font-color: #444444;
+  --togostanza-control-font-size: 14px;
+  --togostanza-control-border-radius: 3px;
+  --togostanza-pagination-font-color: #444444;
+  --togostanza-pagination-font-size: 14px;
+  --togostanza-pagination-background-color: #FFFFFF;
+  --togostanza-pagination-border: 1px solid rgba(0, 0, 0, 0.1);
+  --togostanza-pagination-border-radius: 3px;
+  --togostanza-pagination-padding: 2px 8px;
+  --togostanza-pagination-current-font-color: #FFFFFF;
+  --togostanza-pagination-current-background-color: #249eb3;
+  --togostanza-pagination-current-border: 1px solid #aaa;
+  --togostanza-pagination-arrow-color: #333333;
+  --togostanza-vertical-pagination-placement: column;
+  --togostanza-horizonal-pagination-placement: center;
+  --column-count: 1;
+  --table-background-color: rgba(255,255,255,0);
+  --row-padding: 5px;
+  --key-width-percentage: 30%;
+}
+
+togostanza-scorecard {
+  --togostanza-key-font-color: #249eb3;
+  --togostanza-key-font-size: 16;
+  --togostanza-key-font-weight: 400;
+  --togostanza-value-font-color: #444444;
+  --togostanza-value-font-size: 36;
+  --togostanza-value-font-weight: 600;
+}
+
+togostanza-hash-table {
+  --togostanza-key-font-color: #249eb3;
+  --togostanza-key-font-size: 12px;
+  --togostanza-key-font-weight: 400;
+  --togostanza-value-font-color: #444444;
+  --togostanza-value-font-size: 12px;
+  --togostanza-value-font-weight: 400;
+}
+
+.clinical-significance:before {
+  content: attr(data-sign) "";
+  width: 18px;
+  line-height: 18px;
+  height: 18px;
+  display: inline-block;
+  margin-right: 3px;
+  border-radius: 9px;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+/* P: 危険（赤系） --color-sign-dangerous */
+.clinical-significance[data-sign=P]:before {
+  color: #ff5a54;
+  border-color: #ff5a54;
+  background-color: #ffeeed;
+}
+/* PLP: 低危険（オレンジ系） --color-sign-lowdangerous */
+.clinical-significance[data-sign=PLP]:before {
+  color: #ff953c;
+  border-color: #ff953c;
+  background-color: #ffe3cb;
+}
+/* LP: 警告（黄色系） --color-sign-warning */
+.clinical-significance[data-sign=LP]:before {
+  color: #ffae00;
+  border-color: #ffae00;
+  background-color: #fff7e5;
+}
+/* LPLP: 低危険（オレンジ系） --color-sign-lowdangerous */
+.clinical-significance[data-sign=LPLP]:before {
+  color: #ff953c;
+  border-color: #ff953c;
+  background-color: #ffe3cb;
+}
+/* ERA / LRA / URA: リスクアレル（黄色系） --color-sign-warning */
+.clinical-significance[data-sign=ERA]:before,
+.clinical-significance[data-sign=LRA]:before,
+.clinical-significance[data-sign=URA]:before {
+  color: #ffae00;
+  border-color: #ffae00;
+  background-color: #fff7e5;
+}
+/* US / VH / VM / VL: 不明（くすんだ黄緑系） --color-sign-unknown */
+.clinical-significance[data-sign=US]:before,
+.clinical-significance[data-sign=VH]:before,
+.clinical-significance[data-sign=VM]:before,
+.clinical-significance[data-sign=VL]:before {
+  color: #bbba7e;
+  border-color: #bbba7e;
+  background-color: #f9f9f3;
+}
+/* LB: 正常（黄緑系） --color-sign-normal */
+.clinical-significance[data-sign=LB]:before {
+  color: #9dcf3a;
+  border-color: #9dcf3a;
+  background-color: #f3f9e6;
+}
+/* B: 安全（緑系） --color-sign-safe */
+.clinical-significance[data-sign=B]:before {
+  color: #04af58;
+  border-color: #04af58;
+  background-color: #e7fef2;
+}
+/* CI / CC: 競合（紫系） --color-sign-modifier */
+.clinical-significance[data-sign=CI]:before,
+.clinical-significance[data-sign=CC]:before {
+  color: #c654ff;
+  border-color: #c654ff;
+  background-color: #f9edff;
+}
+/* DR / CS / A / RF / PR / AF: その他（茶系） --color-sign-other */
+.clinical-significance[data-sign=DR]:before,
+.clinical-significance[data-sign=CS]:before,
+.clinical-significance[data-sign=A]:before,
+.clinical-significance[data-sign=RF]:before,
+.clinical-significance[data-sign=PR]:before,
+.clinical-significance[data-sign=AF]:before,
+.clinical-significance[data-sign=O]:before {
+  color: #9c8200;
+  border-color: #9c8200;
+  background-color: #fff7cf;
+}
+/* NP / NC / AN: 未分類（グレー） --color-gray */
+.clinical-significance[data-sign=NP]:before,
+.clinical-significance[data-sign=NC]:before,
+.clinical-significance[data-sign=AN]:before {
+  color: #444;
+  border-color: #94928d;
+  background-color: white;
+}
+
+.clinical-significance-full {
+  font-size: 12px;
+  font-weight: bold;
+  border: 1px solid;
+  border-radius: 8.5px;
+  padding: 0 7px;
+  white-space: nowrap;
+  display: inline-block;
+  margin-bottom: 2px;
+}
+.clinical-significance-full[data-sign=P] {
+  color: #ff5a54;
+  border-color: #ff5a54;
+  background-color: #ffeeed;
+}
+.clinical-significance-full[data-sign=PLP] {
+  color: #ff953c;
+  border-color: #ff953c;
+  background-color: #ffe3cb;
+}
+.clinical-significance-full[data-sign=LP] {
+  color: #ffae00;
+  border-color: #ffae00;
+  background-color: #fff7e5;
+}
+.clinical-significance-full[data-sign=LPLP] {
+  color: #ff953c;
+  border-color: #ff953c;
+  background-color: #ffe3cb;
+}
+.clinical-significance-full[data-sign=ERA],
+.clinical-significance-full[data-sign=LRA],
+.clinical-significance-full[data-sign=URA] {
+  color: #ffae00;
+  border-color: #ffae00;
+  background-color: #fff7e5;
+}
+.clinical-significance-full[data-sign=US],
+.clinical-significance-full[data-sign=VH],
+.clinical-significance-full[data-sign=VM],
+.clinical-significance-full[data-sign=VL] {
+  color: #bbba7e;
+  border-color: #bbba7e;
+  background-color: #f9f9f3;
+}
+.clinical-significance-full[data-sign=LB] {
+  color: #9dcf3a;
+  border-color: #9dcf3a;
+  background-color: #f3f9e6;
+}
+.clinical-significance-full[data-sign=B] {
+  color: #04af58;
+  border-color: #04af58;
+  background-color: #e7fef2;
+}
+.clinical-significance-full[data-sign=CI],
+.clinical-significance-full[data-sign=CC] {
+  color: #c654ff;
+  border-color: #c654ff;
+  background-color: #f9edff;
+}
+.clinical-significance-full[data-sign=DR],
+.clinical-significance-full[data-sign=CS],
+.clinical-significance-full[data-sign=A],
+.clinical-significance-full[data-sign=RF],
+.clinical-significance-full[data-sign=PR],
+.clinical-significance-full[data-sign=AF],
+.clinical-significance-full[data-sign=O] {
+  color: #9c8200;
+  border-color: #9c8200;
+  background-color: #fff7cf;
+}
+.clinical-significance-full[data-sign=NP],
+.clinical-significance-full[data-sign=NC],
+.clinical-significance-full[data-sign=AN] {
+  color: #444;
+  border-color: #94928d;
+  background-color: white;
+}
+
+.star-rating {
+  display: inline-block;
+  position: absolute;
+  font-size: 15px;
+}
+.star-rating:after {
+  content: "★★★★";
+  color: #dfdedd;
+}
+.star-rating > .star-rating-item {
+  position: absolute;
+  overflow: hidden;
+}
+.star-rating > .star-rating-item:before {
+  content: "★★★★";
+  color: #249EB3;
+}
+.star-rating > .star-rating-item[data-stars="1"] {
+  width: 25%;
+}
+.star-rating > .star-rating-item[data-stars="2"] {
+  width: 50%;
+}
+.star-rating > .star-rating-item[data-stars="3"] {
+  width: 75%;
+}
+.star-rating > .star-rating-item[data-stars="4"] {
+  width: 100%;
+}
+.chromosome-position {
+  white-space: nowrap;
+}
+.chromosome-position > * {
+  display: inline-block;
+}
+.chromosome-position > *:nth-child(1)::after {
+  content: ":";
+}
+.ref-alt {
+  font-weight: bold;
+  white-space: nowrap;
+}
+.ref-alt > .ref, .ref-alt > .alt {
+  display: inline-block;
+  line-height: 18px;
+  height: 18px;
+  padding: 0 6px;
+  vertical-align: middle;
+}
+.ref-alt > .ref[data-sum]:after,
+.ref-alt > .alt[data-sum]:after {
+  color: white;
+  font-size: 10px;
+  display: inline-block;
+  line-height: 12px;
+  padding: 0 4px;
+  border-radius: 6px;
+  vertical-align: middle;
+  font-weight: lighter;
+  margin: 0 -3px 4px 3px;
+  position: relative;
+  content: attr(data-sum) "bp";
+}
+.ref-alt > .ref[data-sum="0"]:after, .ref-alt > .ref[data-sum="1"]:after, .ref-alt > .ref[data-sum="2"]:after, .ref-alt > .ref[data-sum="3"]:after, .ref-alt > .ref[data-sum="4"]:after {
+  display: none;
+}
+.ref-alt > .alt[data-sum="0"]:after, .ref-alt > .alt[data-sum="1"]:after, .ref-alt > .alt[data-sum="2"]:after, .ref-alt > .alt[data-sum="3"]:after, .ref-alt > .alt[data-sum="4"]:after {
+  display: none;
+}
+.ref-alt > .ref {
+  border-left: solid 1px var(--color-mutation-ref);
+  border-top: solid 1px var(--color-mutation-ref);
+  border-bottom: solid 1px var(--color-mutation-ref);
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  color: var(--color-mutation-ref-text);
+  background-color: var(--color-mutation-ref-bg);
+  position: relative;
+  padding-right: 4px;
+}
+.ref-alt > .ref[data-sum]:after {
+  background-color: var(--color-mutation-ref);
+}
+.ref-alt > .alt {
+  border-right: solid 1px var(--color-mutation-alt);
+  border-top: solid 1px var(--color-mutation-alt);
+  border-bottom: solid 1px var(--color-mutation-alt);
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  color: var(--color-mutation-alt-text);
+  background-color: var(--color-mutation-alt-bg);
+  padding-left: 9px;
+}
+.ref-alt > .alt[data-sum]:after {
+  background-color: var(--color-mutation-alt);
+}
+.ref-alt > .arrow {
+  position: relative;
+}
+.ref-alt > .arrow:before, .ref-alt > .arrow:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+}
+.ref-alt > .arrow:before {
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 6px solid var(--color-mutation-ref);
+  top: 0;
+  right: -6px;
+}
+.ref-alt > .arrow:after {
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 6px solid var(--color-mutation-ref-bg);
+  top: 1px;
+  right: -5px;
+}
+.consequence-item {
+  white-space: nowrap;
+}
+.clinical_significance {
+  white-space: nowrap;
+}
+.clinical_significance > .clinical-significance {
+  display: inline-block;
+  vertical-align: middle;
+}
+main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
+  display: flex;
+}
+
+:host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table > tbody > tr > td a,
+:host(togostanza-pagination-table) .wrapper > .tableOptionWrapper > .tableWrapper > table > tbody > tr > td a .label,
+:host(togostanza-scroll-table) .tableWrapper > table > tbody > tr > td > span > a,
+:host(togostanza-hash-table) .container dd > a {
+  color: #256D80;
+}
+
+/* ==============================
+ togostanza-pagination-table
+============================== */
+
+:host(togostanza-pagination-table) {
+  --togostanza-fonts-font_family: "Roboto Condensed", sans-serif;
+  --togostanza-fonts-font_size_small: 14;
+  --togostanza-theme-series_0_color: #249eb3;
+
+  .wrapper {
+    &:has(> .paginationWrapper) > .tableOptionWrapper > .tableWrapper {
+      box-shadow: inset 0 -1px 0 #000;
+    }
+
+    > .tableOptionWrapper {
+      > .tableOption {
+        padding: 4px 6px;
+        margin-bottom: 0;
+      }
+
+      > .tableWrapper {
+		  
+        > table {
+          border-top: none;
+          line-height: 1;
+
+          > thead > tr > th {
+            padding: 4px;
+          }
+
+          > tbody {
+            > tr {
+              > td {
+                border-bottom: 1px solid #dee2e6;
+                vertical-align: top;
+              }
+              td[rowspan] {
+                border-bottom: 1px solid #dee2e6;
+              }
+            }
+            > tr:last-child > td {
+              border-bottom-color: transparent;
+            }
+            > tr:not(:has(~ tr > td[rowspan])) > td[rowspan] {
+              border-bottom-color: transparent;
+            }
+          }
+
+          .icon.active path {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    > .paginationWrapper > .serialPagination {
+      .arrowWrapper > .arrow > path {
+        fill: var(--togostanza-fonts-font_color_primary);
+      }
+
+      .paginationNumList {
+        border: none;
+
+        > .pagination {
+          color: var(--togostanza-fonts-font_color_primary);
+          border: none;
+          border-radius: 50%;
+
+          &:first-of-type {
+            border-radius: 50%;
+            margin-right: 3px;
+          }
+
+          &:last-of-type {
+            border-radius: 50%;
+          }
+
+          + .pagination {
+            margin-right: 3px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ==============================
+ togostanza-scroll-table
+============================== */
+
 :host(togostanza-scroll-table) .tableWrapper {
   --togostanza-fonts-font_family: 'Roboto Condensed', sans-serif;
   max-height: 400px;
@@ -811,7 +1307,8 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 			  border-radius: 9px;
 			
 				  &[data-function="T"],
-				  &[data-function="B"] {
+				  &[data-function="B"],
+				  &[data-function="P0"]{
 				    background-color: var(--color-sign-safe);
 				  }
 				
@@ -820,12 +1317,14 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 				  }
 				
 				  &[data-function="POSSD"],
-				  &[data-function="LP"] {
+				  &[data-function="LP"],
+				  &[data-function="P10"] {
 				    background-color: var(--color-sign-warning);
 				  }
 				
 				  &[data-function="D"],
-				  &[data-function="PROBD"] {
+				  &[data-function="PROBD"],
+				  &[data-function="P20"] {
 				    background-color: var(--color-sign-dangerous);
 				  }
 				
@@ -853,6 +1352,36 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 		}
 	}
 }
+
+/* ==============================
+ togostanza-hash-table
+============================== */
+
+:host(togostanza-hash-table) .container{
+	dl {
+		padding: 0;
+		line-height: 1.2;
+	}
+
+	dt,dd {
+		padding: 7px 4px;
+	}
+
+	dt {
+		color: #444;
+	    font-weight: bold;
+		width: 6em;
+	}
+
+	dd {
+		width: calc(100% - 6em)
+	}
+}
+
+togostanza--menu {
+  cursor: pointer;
+}
+
 
 /* ==============================
  togostanza-hash-table
