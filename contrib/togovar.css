@@ -1086,8 +1086,8 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 			  height: 16px;
 			  background-color: var(--color-key-dark3);
 			  background-image: none;
-			  -webkit-mask: url("https://raw.githubusercontent.com/togovar/togovar/refs/heads/staging/app/frontend/src/assets/icons/icon-variant-report.svg") center / contain no-repeat;
-			  mask: url("https://raw.githubusercontent.com/togovar/togovar/refs/heads/staging/app/frontend/src/assets/icons/icon-variant-report.svg") center / contain no-repeat;
+			  -webkit-mask: url("https://raw.githubusercontent.com/togovar/togovar/staging/app/frontend/src/assets/icons/icon-variant-report.svg") center / contain no-repeat;
+			  mask: url("https://raw.githubusercontent.com/togovar/togovar/staging/app/frontend/src/assets/icons/icon-variant-report.svg") center / contain no-repeat;
 			}
 		}
 
@@ -1245,13 +1245,13 @@ main .summary_table_wrapper .table > tbody > tr > td.ref-alt {
 					> .marker.homozygote-marker {
 					  top: -5px;
 					  right: -5px;
-					  background-image: url("https://raw.githubusercontent.com/togovar/togovar/refs/heads/staging/app/frontend/src/assets/icons/homozygote.svg");
+					  background-image: url("https://raw.githubusercontent.com/togovar/togovar/staging/app/frontend/src/assets/icons/homozygote.svg");
 					  background-size: cover;
 					}
 					> .marker.hemizygote-marker {
 					  top: calc(5px);
 					  right: -5px;
-					  background-image: url("https://raw.githubusercontent.com/togovar/togovar/refs/heads/staging/app/frontend/src/assets/icons/hemizygote.svg");
+					  background-image: url("https://raw.githubusercontent.com/togovar/togovar/staging/app/frontend/src/assets/icons/hemizygote.svg");
 					  background-size: cover;
 					}
 					> .marker.hemizygote-marker:only-child {
